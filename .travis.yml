@@ -42,7 +42,7 @@ matrix:
     - python: 3.4
     - python: 3.5
     - python: 2.7
-      env: TEST_ARGS=--pep8
+      env: TEST_ARGS=--pep8 MOCK=mock
     - python: 2.7
       env: BUILD_DOCS=true MOCK=mock
     - python: "nightly"
