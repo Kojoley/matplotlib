@@ -1,42 +1,41 @@
 %PDF-1.4
 %¬Ü «º
 1 0 obj
-<< /Type /Catalog /Pages 2 0 R >>
+<< /Pages 2 0 R /Type /Catalog >>
 endobj
 8 0 obj
-<< /XObject 7 0 R /Pattern 5 0 R
-/ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] /ExtGState 4 0 R
-/Shading 6 0 R /Font 3 0 R >>
+<< /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] /XObject 7 0 R
+/Font 3 0 R /ExtGState 4 0 R /Pattern 5 0 R /Shading 6 0 R >>
 endobj
 10 0 obj
-<< /Group << /CS /DeviceRGB /S /Transparency /Type /Group >> /Parent 2 0 R
-/MediaBox [ 0 0 378 54 ] /Resources 8 0 R /Type /Page /Contents 9 0 R >>
+<< /Resources 8 0 R /Type /Page /Annots [ ] /Contents 9 0 R /Parent 2 0 R
+/MediaBox [ 0 0 378 54 ]
+/Group << /CS /DeviceRGB /S /Transparency /Type /Group >> >>
 endobj
 9 0 obj
-<< /Filter /FlateDecode /Length 11 0 R >>
+<< /Length 11 0 R /Filter /FlateDecode >>
 stream
-xœ-Œ=Â0ƒ÷w
-³ 2^’æoBB‚ÎH¹¨EQ;0õú˜Â`Ù²?Ù¢‰ÅE£VX¢L|ÊôyóĞ3èÏ^2’˜H6je=È›Š£²°Yá¼‰9<¹ÔïÉE£¨O9İÈ8ÔQºóµI0Ş¥’SLZxB¤Ûmƒ7šU·Å÷ÿa¿×*w‘¡Ä%#
+xœ-Œ±Â0Dw…YPvBwBB‚ÎHùPƒ¢v`êïs”OwöN¹‘reáV@%Á5SÈVgùË›h„¯¨6° 4€JŒ	OÍæ"ûà’åÈÏ™®å·ê¬—ä#—îhy.#u——FÑŸ{Ë)KTºİ˜J°¨Amökp+ô ú&ø
 endstream
 endobj
 11 0 obj
-141
+146
 endobj
 16 0 obj
-<< /Filter /FlateDecode /Length 359 >>
+<< /Length 359 /Filter /FlateDecode >>
 stream
 xœ5’Kne1Dçwl ’ùÚ^ÏkeÔ½ÿiÜôÀ\!KêÈ×–ĞÚ%ô1µBş=f{¼¿xGLM,\lë•Ïã+%,ÅÍ$Î›di¯L\Uò.1Nñy¬®”Ç UÈ¯ı<zîxZ›Œ+G
 DÀ,Hª’±ÖØ<Ñ‘öà£°È<¢~$#;’KÒM47œÖkuM„–/İ¥k¥fìÛ~Ç aa¡Zc‰,6b»ågWÙ6Pè˜İÆçvvÈáiAªõõ!…¼…,z^Å‚m‘å¼[g p!˜·`~Ÿ)eåkµEn/T‘ï—ûÔñOšõdpôuAî‘YW…¾%#°+ÿN¤{Ë<32¤Œí”3sKùb	@deÌgsxµï´ITï™d…•i¤6ïLºí¾_AD½·v—İbgøßĞw*æ{‡İ¥pë9Ho!,óÊ/ëÏóıf†5
 endstream
 endobj
 17 0 obj
-<< /Filter /FlateDecode /Length 197 >>
+<< /Length 197 /Filter /FlateDecode >>
 stream
 xœ=PIÃ0¼û| ’æ=©zJÿí€£JQ˜˜ñ,QUšÄ:éµIÔÉÃéÍƒÃˆ¿ƒÁ0º˜,¢Ù–ÜÓç¤k42è¬hŞÚ›ÌFÂBî°L[ØÔ\ó˜ò™–Ö ½pbğcÌÕ	 ¶³Sİÿ|w³— h	°‘Ã`„H%Æ¨¦ÄÕ·Ô€’Ÿo³Ş.k2Ãw«œKŸz2¶ˆSäÍuŒËõPêÕ9;$ŞxÊÛÊÑìÊóÔzR_ãó>VG
 endstream
 endobj
 18 0 obj
-<< /Filter /FlateDecode /Length 583 >>
+<< /Length 583 /Filter /FlateDecode >>
 stream
 xœM”Kn$1C÷u
 ] €e}lŸ'ƒY%÷ßÎ£+f‘Xm·$’¢z­mÃrÚ‡O[5¬WÛV”¹»}?ºô1ìëŞuÚò²hë}Ì—}>İaÓ:â©sîùùTær/óM“ctû|â¸%5ªmN‹¦Ûy†}”ÍzËLŸ2^ûFîÔMR©x[]àç¿‡ (XËŠ2|yS¥RÆ±yxËM;ˆ1JU&iAÆ×£~	…9ø=k¶¾£h[²íÁŞ¡ºs¥uCÁ_İ‚n:Eñr.¾QĞ¤AD‚€å{–xŞms$9ä×ÑK¼Øâp8 l!ˆÅíà–IL0eoœ5uÅAšn«@ƒ›S`âêA¥zÏº9Š¨Xh£ú•ô/êxPÖÁ&…8G]ÔDè„=°Ë¯_Ok:DİÊC¥R±•ÎôuÃ RÚõ 
@@ -45,18 +44,18 @@ xœM”Kn$1C÷u
 endstream
 endobj
 14 0 obj
-<< /FontDescriptor 13 0 R /Name /STIXGeneral-Regular
-/FontMatrix [ 0.001 0 0 0.001 0 0 ] /BaseFont /STIXGeneral-Regular
-/Widths 12 0 R /Subtype /Type3 /CharProcs 15 0 R /Type /Font /FirstChar 0
-/FontBBox [ -970 -443 2000 1023 ]
+<<
 /Encoding << /Differences [ 33 /exclam 38 /ampersand 63 /question ] /Type /Encoding
 >>
-/LastChar 255 >>
+/Subtype /Type3 /LastChar 255 /Widths 12 0 R /FirstChar 0 /CharProcs 15 0 R
+/Type /Font /FontDescriptor 13 0 R /Name /STIXGeneral-Regular
+/FontBBox [ -970 -443 2000 1023 ] /BaseFont /STIXGeneral-Regular
+/FontMatrix [ 0.001 0 0 0.001 0 0 ] >>
 endobj
 13 0 obj
-<< /Descent -455 /FontBBox [ -970 -443 2000 1023 ] /StemV 0 /Flags 32
-/XHeight 0 /Type /FontDescriptor /FontName /STIXGeneral-Regular
-/MaxWidth 1109 /CapHeight 0 /ItalicAngle 0 /Ascent 1055 >>
+<< /Flags 32 /StemV 0 /FontBBox [ -970 -443 2000 1023 ]
+/Type /FontDescriptor /CapHeight 0 /MaxWidth 1109 /Ascent 1055
+/FontName /STIXGeneral-Regular /Descent -455 /ItalicAngle 0 /XHeight 0 >>
 endobj
 12 0 obj
 [ 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250
@@ -75,7 +74,7 @@ endobj
 500 500 500 564 500 500 500 500 500 500 500 500 ]
 endobj
 15 0 obj
-<< /ampersand 18 0 R /exclam 17 0 R /question 16 0 R >>
+<< /question 16 0 R /exclam 17 0 R /ampersand 18 0 R >>
 endobj
 3 0 obj
 << /F1 14 0 R >>
@@ -96,34 +95,34 @@ endobj
 << /Count 1 /Kids [ 10 0 R ] /Type /Pages >>
 endobj
 19 0 obj
-<< /CreationDate (D:20150127140431-04'00')
-/Producer (matplotlib pdf backend)
-/Creator (matplotlib 1.5.dev1, http://matplotlib.org) >>
+<< /Producer (matplotlib pdf backend)
+/Creator (matplotlib 1.5.0rc2+189.g5c20a83.dirty, http://matplotlib.org)
+/CreationDate (D:20151023123209-04'00') >>
 endobj
 xref
 0 20
 0000000000 65535 f 
 0000000016 00000 n 
-0000003758 00000 n 
-0000003642 00000 n 
-0000003674 00000 n 
-0000003695 00000 n 
-0000003716 00000 n 
-0000003737 00000 n 
+0000003775 00000 n 
+0000003659 00000 n 
+0000003691 00000 n 
+0000003712 00000 n 
+0000003733 00000 n 
+0000003754 00000 n 
 0000000065 00000 n 
-0000000372 00000 n 
+0000000384 00000 n 
 0000000208 00000 n 
-0000000588 00000 n 
-0000002523 00000 n 
-0000002314 00000 n 
-0000001966 00000 n 
-0000003570 00000 n 
-0000000608 00000 n 
-0000001040 00000 n 
-0000001310 00000 n 
-0000003818 00000 n 
+0000000605 00000 n 
+0000002540 00000 n 
+0000002331 00000 n 
+0000001983 00000 n 
+0000003587 00000 n 
+0000000625 00000 n 
+0000001057 00000 n 
+0000001327 00000 n 
+0000003835 00000 n 
 trailer
-<< /Info 19 0 R /Root 1 0 R /Size 20 >>
+<< /Size 20 /Info 19 0 R /Root 1 0 R >>
 startxref
-3969
+4005
 %%EOF

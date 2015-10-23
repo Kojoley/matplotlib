@@ -1,44 +1,46 @@
 %PDF-1.4
 %¬Ü «º
 1 0 obj
-<< /Type /Catalog /Pages 2 0 R >>
+<< /Pages 2 0 R /Type /Catalog >>
 endobj
 8 0 obj
-<< /XObject 7 0 R /Pattern 5 0 R
-/ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] /ExtGState 4 0 R
-/Shading 6 0 R /Font 3 0 R >>
+<< /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] /XObject 7 0 R
+/Font 3 0 R /ExtGState 4 0 R /Pattern 5 0 R /Shading 6 0 R >>
 endobj
 10 0 obj
-<< /Group << /CS /DeviceRGB /S /Transparency /Type /Group >> /Parent 2 0 R
-/MediaBox [ 0 0 378 54 ] /Resources 8 0 R /Type /Page /Contents 9 0 R >>
+<< /Resources 8 0 R /Type /Page /Annots [ ] /Contents 9 0 R /Parent 2 0 R
+/MediaBox [ 0 0 378 54 ]
+/Group << /CS /DeviceRGB /S /Transparency /Type /Group >> >>
 endobj
 9 0 obj
-<< /Filter /FlateDecode /Length 11 0 R >>
+<< /Length 11 0 R /Filter /FlateDecode >>
 stream
-xœ%N»Â@ÛóÛ#¹ã]Q¡bDÜÀÀ‚xªñû¤ (²å8N	Z0:í±².&Åş‡~¦„ÿp¡³:ZuvÚ•zhcÂ*HrÆÃ:Rô84Ïj¬G>Òt)ÆEï£õR	ò™Š]Q"wMÅãViœº‹]ù›,2=À†Åb|îÏ¬kS¬Ø&§’/è½é&¯¶ÍévzîûÕkß_“·ÔÁU¨ï´Ö¢/Èâ4)
+xœ%N»Â@ÛóËÀ‘Üq®¨P1"n``AP
+Uø}\PdÙIœ‡rGÊ-wÀ‡•k %A6‹	ÜÿØÏ!äO¢3tk|`ª–X&<59ãÙ:Rô|h‘1¢&XÏùD³•r0.z­×R9Ÿ©ØÎESÊ8TæXw±Ÿü:ËL#jyüğ¯¬QkS,Å&‡’/àŞl›×»º¹5ÏC¿~úëqúÖ*¸’«;mô3$5Š
 endstream
 endobj
 11 0 obj
-185
+189
 endobj
 16 0 obj
-<< /Filter /FlateDecode /Subtype /Form /Length 80 /Type /XObject
-/BBox [ -970 -305 1429 1023 ] >>
+<< /BBox [ -970 -305 1429 1023 ] /Length 80 /Subtype /Form
+/Filter /FlateDecode /Type /XObject >>
 stream
 xœ5¹À0sª ¾ÓÓ#¹ÿTXÈÑíÜ!‚Î/y’yãEcÉtŒ“Ö'kG’Z”‘<™Ÿ@Ídã’kc;ƒr»ÿİ¢g ¯•
 endstream
 endobj
 14 0 obj
-<< /FontDescriptor 13 0 R /Name /STIXGeneral-Italic
-/FontMatrix [ 0.001 0 0 0.001 0 0 ] /BaseFont /STIXGeneral-Italic
-/Widths 12 0 R /Subtype /Type3 /CharProcs 15 0 R /Type /Font /FirstChar 0
-/FontBBox [ -970 -305 1429 1023 ]
-/Encoding << /Differences [ ] /Type /Encoding >> /LastChar 255 >>
+<< /Encoding << /Differences [ ] /Type /Encoding >> /Subtype /Type3
+/LastChar 255 /Widths 12 0 R /FirstChar 0 /CharProcs 15 0 R /Type /Font
+/FontDescriptor 13 0 R /Name /STIXGeneral-Italic
+/FontBBox [ -970 -305 1429 1023 ] /BaseFont /STIXGeneral-Italic
+/FontMatrix [ 0.001 0 0 0.001 0 0 ] >>
 endobj
 13 0 obj
-<< /Descent -455 /FontBBox [ -970 -305 1429 1023 ] /StemV 0 /Flags 96
-/XHeight 0 /Type /FontDescriptor /FontName /STIXGeneral-Italic
-/MaxWidth 1117 /CapHeight 0 /ItalicAngle 43909 /Ascent 1055 >>
+<< /Flags 96 /StemV 0 /FontBBox [ -970 -305 1429 1023 ]
+/Type /FontDescriptor /CapHeight 0 /MaxWidth 1117 /Ascent 1055
+/FontName /STIXGeneral-Italic /Descent -455 /ItalicAngle 43909 /XHeight 0
+>>
 endobj
 12 0 obj
 [ 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250
@@ -60,29 +62,29 @@ endobj
 << >>
 endobj
 21 0 obj
-<< /Filter /FlateDecode /Length 136 >>
-stream
-xœ-O¹1ë58@Ÿe{R]öoC9©(‰PøÆe³àk ˆ/ªI;§GÌ&*-µá®Èí¸Å+–ÇlôœÍt u\“äúõÜr™ÿÈœ4`¸h2ê7¶f[mïC5zfœ"ÉP^Ç«ÛZ7r‘¥…ÿ·¼¿^+
-endstream
-endobj
-22 0 obj
-<< /Filter /FlateDecode /Length 140 >>
+<< /Length 140 /Filter /FlateDecode >>
 stream
 xœ=»1C{OÁ˜úÙç‚TÉşm¨J%=Jî‰Øxp|JõÉÑòÁšø;ök¿‡±]70%A×¨ƒmÍaEK“+^ Oä’yòÆ_7½QıšÍDh_;{k†‘ÚVÇ®¸®–ÖŠ)®&„£Âyû}¨<ó¥+ñâ¯/éò+ƒ
 endstream
 endobj
+22 0 obj
+<< /Length 136 /Filter /FlateDecode >>
+stream
+xœ-O¹1ë58@Ÿe{R]öoC9©(‰PøÆe³àk ˆ/ªI;§GÌ&*-µá®Èí¸Å+–ÇlôœÍt u\“äúõÜr™ÿÈœ4`¸h2ê7¶f[mïC5zfœ"ÉP^Ç«ÛZ7r‘¥…ÿ·¼¿^+
+endstream
+endobj
 19 0 obj
-<< /FontDescriptor 18 0 R /Name /STIXGeneral-Regular
-/FontMatrix [ 0.001 0 0 0.001 0 0 ] /BaseFont /STIXGeneral-Regular
-/Widths 17 0 R /Subtype /Type3 /CharProcs 20 0 R /Type /Font /FirstChar 0
-/FontBBox [ -970 -443 2000 1023 ]
+<<
 /Encoding << /Differences [ 40 /parenleft /parenright ] /Type /Encoding >>
-/LastChar 255 >>
+/Subtype /Type3 /LastChar 255 /Widths 17 0 R /FirstChar 0 /CharProcs 20 0 R
+/Type /Font /FontDescriptor 18 0 R /Name /STIXGeneral-Regular
+/FontBBox [ -970 -443 2000 1023 ] /BaseFont /STIXGeneral-Regular
+/FontMatrix [ 0.001 0 0 0.001 0 0 ] >>
 endobj
 18 0 obj
-<< /Descent -455 /FontBBox [ -970 -443 2000 1023 ] /StemV 0 /Flags 32
-/XHeight 0 /Type /FontDescriptor /FontName /STIXGeneral-Regular
-/MaxWidth 1109 /CapHeight 0 /ItalicAngle 0 /Ascent 1055 >>
+<< /Flags 32 /StemV 0 /FontBBox [ -970 -443 2000 1023 ]
+/Type /FontDescriptor /CapHeight 0 /MaxWidth 1109 /Ascent 1055
+/FontName /STIXGeneral-Regular /Descent -455 /ItalicAngle 0 /XHeight 0 >>
 endobj
 17 0 obj
 [ 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250
@@ -101,7 +103,7 @@ endobj
 500 500 500 564 500 500 500 500 500 500 500 500 ]
 endobj
 20 0 obj
-<< /parenright 21 0 R /parenleft 22 0 R >>
+<< /parenleft 21 0 R /parenright 22 0 R >>
 endobj
 3 0 obj
 << /F2 14 0 R /F1 19 0 R >>
@@ -122,38 +124,38 @@ endobj
 << /Count 1 /Kids [ 10 0 R ] /Type /Pages >>
 endobj
 23 0 obj
-<< /CreationDate (D:20150127140409-04'00')
-/Producer (matplotlib pdf backend)
-/Creator (matplotlib 1.5.dev1, http://matplotlib.org) >>
+<< /Producer (matplotlib pdf backend)
+/Creator (matplotlib 1.5.0rc2+189.g5c20a83.dirty, http://matplotlib.org)
+/CreationDate (D:20151023123158-04'00') >>
 endobj
 xref
 0 24
 0000000000 65535 f 
 0000000016 00000 n 
-0000004684 00000 n 
-0000004524 00000 n 
-0000004567 00000 n 
-0000004588 00000 n 
-0000004609 00000 n 
-0000004630 00000 n 
+0000004700 00000 n 
+0000004540 00000 n 
+0000004583 00000 n 
+0000004604 00000 n 
+0000004625 00000 n 
+0000004646 00000 n 
 0000000065 00000 n 
-0000000372 00000 n 
+0000000384 00000 n 
 0000000208 00000 n 
-0000000632 00000 n 
-0000001384 00000 n 
-0000001172 00000 n 
-0000000864 00000 n 
-0000002429 00000 n 
-0000000652 00000 n 
-0000003418 00000 n 
-0000003209 00000 n 
-0000002873 00000 n 
-0000004465 00000 n 
-0000002451 00000 n 
-0000002660 00000 n 
-0000004744 00000 n 
+0000000648 00000 n 
+0000001400 00000 n 
+0000001188 00000 n 
+0000000880 00000 n 
+0000002445 00000 n 
+0000000668 00000 n 
+0000003434 00000 n 
+0000003225 00000 n 
+0000002889 00000 n 
+0000004481 00000 n 
+0000002467 00000 n 
+0000002680 00000 n 
+0000004760 00000 n 
 trailer
-<< /Info 23 0 R /Root 1 0 R /Size 24 >>
+<< /Size 24 /Info 23 0 R /Root 1 0 R >>
 startxref
-4895
+4930
 %%EOF

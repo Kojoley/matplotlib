@@ -20,6 +20,7 @@ z
   <g id="text_1">
    <!-- \$100.00 $\alpha \_$ -->
    <defs>
+    <path id="BitstreamVeraSans-Roman-20"/>
     <path d="M 54.90625 42.796875 
 L 40.703125 16.703125 
 L 40.703125 14.90625 
@@ -51,13 +52,6 @@ Q 34.40625 20.703125 34.84375 22.046875
 Q 35.296875 23.40625 35.59375 24.703125 
 Q 35.90625 26 35.90625 27.203125 
 " id="STIXGeneral-Italic-3b1"/>
-    <path id="BitstreamVeraSans-Roman-20"/>
-    <path d="M 10.6875 12.40625 
-L 21 12.40625 
-L 21 0 
-L 10.6875 0 
-z
-" id="BitstreamVeraSans-Roman-2e"/>
     <path d="M 50 -12.5 
 L 0 -12.5 
 L 0 -7.5 
@@ -136,6 +130,12 @@ Q 6.59375 17.96875 6.59375 36.375
 Q 6.59375 54.828125 13.0625 64.515625 
 Q 19.53125 74.21875 31.78125 74.21875 
 " id="BitstreamVeraSans-Roman-30"/>
+    <path d="M 10.6875 12.40625 
+L 21 12.40625 
+L 21 0 
+L 10.6875 0 
+z
+" id="BitstreamVeraSans-Roman-2e"/>
    </defs>
    <g transform="translate(155.94 30.31125)scale(0.12 -0.12)">
     <use transform="translate(0.0 0.015625)" xlink:href="#BitstreamVeraSans-Roman-24"/>

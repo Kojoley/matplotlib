@@ -4,16 +4,16 @@
 << /Pages 2 0 R /Type /Catalog >>
 endobj
 8 0 obj
-<< /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] /Shading 6 0 R
-/ExtGState 4 0 R /XObject 7 0 R /Font 3 0 R /Pattern 5 0 R >>
+<< /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] /XObject 7 0 R
+/Font 3 0 R /ExtGState 4 0 R /Pattern 5 0 R /Shading 6 0 R >>
 endobj
 10 0 obj
-<< /Annots [ ] /Group << /S /Transparency /CS /DeviceRGB /Type /Group >>
-/MediaBox [ 0 0 378 54 ] /Contents 9 0 R /Resources 8 0 R /Type /Page
-/Parent 2 0 R >>
+<< /Resources 8 0 R /Type /Page /Annots [ ] /Contents 9 0 R /Parent 2 0 R
+/MediaBox [ 0 0 378 54 ]
+/Group << /CS /DeviceRGB /S /Transparency /Type /Group >> >>
 endobj
 9 0 obj
-<< /Filter /FlateDecode /Length 11 0 R >>
+<< /Length 11 0 R /Filter /FlateDecode >>
 stream
 xúMMÀÇ@º˜+˙¨Ì.˚‡j Ñ#ëÉWBtïÄ£·˜-åá…Lõy0ˆ¿ë∞Ã»X
 "ê\#Ñáïm*Ç6∫\EG±ˆÇYL• ¬$eÑ	…ìÉQµQ.xã›«ä&$E¨q¯)eù^=áSSùÀÀ„ÚjáÍ›˜.˘pÓLÜ˘Í-L!›”ã¥ ìeŒç	+⁄Á˛´ñ_§[IÆ˛5‹
@@ -23,63 +23,26 @@ endobj
 167
 endobj
 16 0 obj
-<< /Filter /FlateDecode /Length 221 /Subtype /Form
-/BBox [ -970 -443 2000 1023 ] /Type /XObject >>
-stream
-xú5ë;í!CsN·#‡/pûÆ⁄hÊ˛È>‹5ë≤eF‘ë•ÚS¶|ÜÁLA”)∆·«‚≤*ÒiówGÛLqz«g∏√6JPq™Ih+snjI‰zqe+KR´ù2v;'·PT%èãÌ)5âÜÎ≈áT⁄Lôï§Qüg(	2TTqªÛ0Ø‹ÅE¸†ñ›ñI“Æä©Õ€öòb§gIQiqiùÔçgPAƒC•Jfª$¢kçqn¯fÈΩt@a<‘â´®ˆ˙æA√ïd∂:¡Z˜[à¯˛œg¸˝ówP
-endstream
-endobj
-14 0 obj
-<< /FontDescriptor 13 0 R /Widths 12 0 R /Type /Font /LastChar 255
-/FontBBox [ -970 -443 2000 1023 ] /Subtype /Type3
-/Encoding << /Differences [ ] /Type /Encoding >>
-/BaseFont /STIXGeneral-Regular /FontMatrix [ 0.001 0 0 0.001 0 0 ]
-/FirstChar 0 /CharProcs 15 0 R /Name /STIXGeneral-Regular >>
-endobj
-13 0 obj
-<< /Flags 32 /CapHeight 0 /XHeight 0 /Ascent 1055 /Type /FontDescriptor
-/ItalicAngle 0 /FontName /STIXGeneral-Regular
-/FontBBox [ -970 -443 2000 1023 ] /StemV 0 /Descent -455 /MaxWidth 1109 >>
-endobj
-12 0 obj
-[ 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250
-250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 333 408 500 500
-747 778 180 333 333 500 685 250 333 250 278 500 500 500 500 500 500 500 500
-500 500 278 278 685 685 685 444 921 722 667 667 722 611 556 722 722 333 373
-722 611 889 722 722 557 722 667 556 611 722 722 944 722 722 612 333 278 333
-469 500 333 444 500 444 500 444 333 500 500 278 278 500 278 778 500 500 500
-500 333 389 278 500 500 722 500 500 444 480 200 480 541 250 500 250 333 434
-444 1000 500 500 333 1109 556 333 889 250 612 250 250 333 333 444 444 523
-500 1000 333 980 389 333 722 250 444 722 250 330 500 500 500 500 200 500
-333 760 276 500 600 333 760 333 400 685 300 300 333 500 592 250 333 300 310
-500 750 750 750 444 722 722 722 722 722 722 889 667 611 611 611 611 333 333
-333 333 722 722 722 722 722 722 722 640 722 722 722 722 722 722 556 500 444
-444 444 444 444 444 667 444 444 444 444 444 278 278 278 278 500 500 500 500
-500 500 500 564 500 500 500 500 500 500 500 500 ]
-endobj
-15 0 obj
-<< >>
-endobj
-21 0 obj
-<< /Filter /FlateDecode /Length 80 /Subtype /Form
-/BBox [ -970 -305 1429 1023 ] /Type /XObject >>
+<< /BBox [ -970 -305 1429 1023 ] /Length 80 /Subtype /Form
+/Filter /FlateDecode /Type /XObject >>
 stream
 xú5çπ¿0s™†æ””ê#πˇTX»—Ì‹!ÇŒ/yíy„Ec…tåì÷'kGíZîëê<ôü@Õd„íkc;Érªˇ›¢g†Øï
 endstream
 endobj
-19 0 obj
-<< /FontDescriptor 18 0 R /Widths 17 0 R /Type /Font /LastChar 255
-/FontBBox [ -970 -305 1429 1023 ] /Subtype /Type3
-/Encoding << /Differences [ ] /Type /Encoding >>
-/BaseFont /STIXGeneral-Italic /FontMatrix [ 0.001 0 0 0.001 0 0 ]
-/FirstChar 0 /CharProcs 20 0 R /Name /STIXGeneral-Italic >>
+14 0 obj
+<< /Encoding << /Differences [ ] /Type /Encoding >> /Subtype /Type3
+/LastChar 255 /Widths 12 0 R /FirstChar 0 /CharProcs 15 0 R /Type /Font
+/FontDescriptor 13 0 R /Name /STIXGeneral-Italic
+/FontBBox [ -970 -305 1429 1023 ] /BaseFont /STIXGeneral-Italic
+/FontMatrix [ 0.001 0 0 0.001 0 0 ] >>
 endobj
-18 0 obj
-<< /Flags 96 /CapHeight 0 /XHeight 0 /Ascent 1055 /Type /FontDescriptor
-/ItalicAngle 43909 /FontName /STIXGeneral-Italic
-/FontBBox [ -970 -305 1429 1023 ] /StemV 0 /Descent -455 /MaxWidth 1117 >>
+13 0 obj
+<< /Flags 96 /StemV 0 /FontBBox [ -970 -305 1429 1023 ]
+/Type /FontDescriptor /CapHeight 0 /MaxWidth 1117 /Ascent 1055
+/FontName /STIXGeneral-Italic /Descent -455 /ItalicAngle 43909 /XHeight 0
+>>
 endobj
-17 0 obj
+12 0 obj
 [ 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250
 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 333 420 501 500
 755 778 214 333 333 500 675 250 333 250 278 500 500 500 500 500 500 500 500
@@ -95,11 +58,49 @@ endobj
 501 501 501 501 667 444 444 444 444 444 278 278 278 278 500 500 500 500 500
 500 500 675 500 500 500 500 500 444 500 444 ]
 endobj
+15 0 obj
+<< >>
+endobj
+21 0 obj
+<< /BBox [ -970 -443 2000 1023 ] /Length 221 /Subtype /Form
+/Filter /FlateDecode /Type /XObject >>
+stream
+xú5ë;í!CsN·#‡/pûÆ⁄hÊ˛È>‹5ë≤eF‘ë•ÚS¶|ÜÁLA”)∆·«‚≤*ÒiówGÛLqz«g∏√6JPq™Ih+snjI‰zqe+KR´ù2v;'·PT%èãÌ)5âÜÎ≈áT⁄Lôï§Qüg(	2TTqªÛ0Ø‹ÅE¸†ñ›ñI“Æä©Õ€öòb§gIQiqiùÔçgPAƒC•Jfª$¢kçqn¯fÈΩt@a<‘â´®ˆ˙æA√ïd∂:¡Z˜[à¯˛œg¸˝ówP
+endstream
+endobj
+19 0 obj
+<< /Encoding << /Differences [ ] /Type /Encoding >> /Subtype /Type3
+/LastChar 255 /Widths 17 0 R /FirstChar 0 /CharProcs 20 0 R /Type /Font
+/FontDescriptor 18 0 R /Name /STIXGeneral-Regular
+/FontBBox [ -970 -443 2000 1023 ] /BaseFont /STIXGeneral-Regular
+/FontMatrix [ 0.001 0 0 0.001 0 0 ] >>
+endobj
+18 0 obj
+<< /Flags 32 /StemV 0 /FontBBox [ -970 -443 2000 1023 ]
+/Type /FontDescriptor /CapHeight 0 /MaxWidth 1109 /Ascent 1055
+/FontName /STIXGeneral-Regular /Descent -455 /ItalicAngle 0 /XHeight 0 >>
+endobj
+17 0 obj
+[ 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 250
+250 250 250 250 250 250 250 250 250 250 250 250 250 250 250 333 408 500 500
+747 778 180 333 333 500 685 250 333 250 278 500 500 500 500 500 500 500 500
+500 500 278 278 685 685 685 444 921 722 667 667 722 611 556 722 722 333 373
+722 611 889 722 722 557 722 667 556 611 722 722 944 722 722 612 333 278 333
+469 500 333 444 500 444 500 444 333 500 500 278 278 500 278 778 500 500 500
+500 333 389 278 500 500 722 500 500 444 480 200 480 541 250 500 250 333 434
+444 1000 500 500 333 1109 556 333 889 250 612 250 250 333 333 444 444 523
+500 1000 333 980 389 333 722 250 444 722 250 330 500 500 500 500 200 500
+333 760 276 500 600 333 760 333 400 685 300 300 333 500 592 250 333 300 310
+500 750 750 750 444 722 722 722 722 722 722 889 667 611 611 611 611 333 333
+333 333 722 722 722 722 722 722 722 640 722 722 722 722 722 722 556 500 444
+444 444 444 444 444 667 444 444 444 444 444 278 278 278 278 500 500 500 500
+500 500 500 564 500 500 500 500 500 500 500 500 ]
+endobj
 20 0 obj
 << >>
 endobj
 3 0 obj
-<< /F1 19 0 R /F2 14 0 R >>
+<< /F1 14 0 R /F2 19 0 R >>
 endobj
 4 0 obj
 << >>
@@ -111,15 +112,15 @@ endobj
 << >>
 endobj
 7 0 obj
-<< /STIXGeneral-u1D7E4 16 0 R /STIXGeneralItalic-u1D639 21 0 R >>
+<< /STIXGeneral-u1D7E4 21 0 R /STIXGeneralItalic-u1D639 16 0 R >>
 endobj
 2 0 obj
 << /Count 1 /Kids [ 10 0 R ] /Type /Pages >>
 endobj
 22 0 obj
-<< /Creator (matplotlib 1.5.dev1, http://matplotlib.org)
-/Producer (matplotlib pdf backend) /CreationDate (D:20150824145311+01'00')
->>
+<< /Producer (matplotlib pdf backend)
+/Creator (matplotlib 1.5.0rc2+189.g5c20a83.dirty, http://matplotlib.org)
+/CreationDate (D:20151023123158-04'00') >>
 endobj
 xref
 0 23
@@ -135,19 +136,19 @@ xref
 0000000384 00000 n 
 0000000208 00000 n 
 0000000626 00000 n 
-0000001519 00000 n 
-0000001310 00000 n 
-0000001000 00000 n 
-0000002566 00000 n 
+0000001378 00000 n 
+0000001166 00000 n 
+0000000858 00000 n 
+0000002423 00000 n 
 0000000646 00000 n 
-0000003320 00000 n 
-0000003108 00000 n 
-0000002800 00000 n 
+0000003318 00000 n 
+0000003109 00000 n 
+0000002799 00000 n 
 0000004365 00000 n 
-0000002588 00000 n 
+0000002445 00000 n 
 0000004634 00000 n 
 trailer
-<< /Size 23 /Root 1 0 R /Info 22 0 R >>
+<< /Size 23 /Info 22 0 R /Root 1 0 R >>
 startxref
-4785
+4804
 %%EOF

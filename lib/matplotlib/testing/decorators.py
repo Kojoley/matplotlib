@@ -227,7 +227,7 @@ class ImageComparisonTest(CleanupTest):
 
                 yield (do_test,)
 
-def image_comparison(baseline_images=None, extensions=None, tol=13,
+def image_comparison(baseline_images=None, extensions=None, tol=0,
                      freetype_version=None, remove_text=False,
                      savefig_kwarg=None, style='classic'):
     """
@@ -272,6 +272,10 @@ def image_comparison(baseline_images=None, extensions=None, tol=13,
         if desired. Defaults to the 'classic' style.
 
     """
+
+    ### REMOVE ME!!!
+    tol = 0
+    ### REMOVE ME!!!
 
     if baseline_images is None:
         raise ValueError('baseline_images must be specified')
