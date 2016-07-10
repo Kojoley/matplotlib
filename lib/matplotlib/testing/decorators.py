@@ -30,6 +30,15 @@ from matplotlib.testing.compare import comparable_formats, compare_images, \
      make_test_filename
 
 
+def knownfail(msg):
+    # TODO: This is temporary solution until migration to `pytest`
+    if getattr(matplotlib, '_called_from_pytest', False):
+        import pytest
+        pytest.xfail(msg)
+    else:
+        raise KnownFailureTest(msg)
+
+
 def knownfailureif(fail_condition, msg=None, known_exception_class=None ):
     """
 
@@ -42,6 +51,13 @@ def knownfailureif(fail_condition, msg=None, known_exception_class=None ):
     if the exception is an instance of this class. (Default = None)
 
     """
+    # TODO: This is temporary solution until migration to `pytest`
+    if getattr(matplotlib, '_called_from_pytest', False):
+        import pytest
+        strict = fail_condition and fail_condition != 'indeterminate'
+        return pytest.mark.xfail(condition=fail_condition, reason=msg,
+                                 raises=known_exception_class, strict=strict)
+
     # based on numpy.testing.dec.knownfailureif
     if msg is None:
         msg = 'Test known to fail'
@@ -264,7 +280,7 @@ class ImageComparisonTest(CleanupTest):
                                 '(RMS %(rms).3f)'%err)
                     except ImageComparisonFailure:
                         if not check_freetype_version(self._freetype_version):
-                            raise KnownFailureTest(
+                            knownfail(
                                 "Mismatched version of freetype.  Test requires '%s', you have '%s'" %
                                 (self._freetype_version, ft2font.__freetype_version__))
                         raise
