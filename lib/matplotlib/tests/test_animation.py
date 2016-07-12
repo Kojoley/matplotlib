@@ -10,10 +10,10 @@ import numpy as np
 from numpy.testing import assert_equal
 from nose import with_setup
 from nose.tools import assert_false, assert_true
+from nose.plugins.skip import SkipTest
 import matplotlib as mpl
 from matplotlib import pyplot as plt
 from matplotlib import animation
-from matplotlib.testing.noseclasses import KnownFailureTest
 from matplotlib.testing.decorators import cleanup
 from matplotlib.testing.decorators import CleanupTest
 
@@ -113,8 +113,7 @@ def test_save_animation_smoketest():
 @cleanup
 def check_save_animation(writer, extension='mp4'):
     if not animation.writers.is_available(writer):
-        raise KnownFailureTest("writer '%s' not available on this system"
-                               % writer)
+        raise SkipTest("writer '%s' not available on this system" % writer)
     fig, ax = plt.subplots()
     line, = ax.plot([], [])
 
@@ -138,9 +137,8 @@ def check_save_animation(writer, extension='mp4'):
     try:
         anim.save(F.name, fps=30, writer=writer, bitrate=500)
     except UnicodeDecodeError:
-        raise KnownFailureTest("There can be errors in the numpy " +
-                               "import stack, " +
-                               "see issues #1891 and #2679")
+        raise SkipTest("There can be errors in the numpy import stack, "
+                       "see issues #1891 and #2679")
     finally:
         try:
             os.remove(F.name)
