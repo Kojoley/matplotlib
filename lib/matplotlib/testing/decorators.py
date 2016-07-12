@@ -4,16 +4,12 @@ from __future__ import (absolute_import, division, print_function,
 import six
 
 import functools
-import gc
 import inspect
 import os
 import sys
 import shutil
 import warnings
 import unittest
-
-import nose
-import numpy as np
 
 import matplotlib as mpl
 import matplotlib.style
@@ -24,13 +20,23 @@ from matplotlib import ticker
 from matplotlib import pyplot as plt
 from matplotlib import ft2font
 from matplotlib import rcParams
-from matplotlib.testing.noseclasses import KnownFailureTest, \
-     KnownFailureDidNotFailTest, ImageComparisonFailure
 from matplotlib.testing.compare import comparable_formats, compare_images, \
      make_test_filename
+from . import copy_metadata, skip, xfail
+from .exceptions import ImageComparisonFailure
 
 
-def knownfailureif(fail_condition, msg=None, known_exception_class=None ):
+def skipif(condition, *args, **kwargs):
+    """Skip the given test function if eval(condition) results in a True
+    value.
+
+    Optionally specify a reason for better reporting.
+    """
+    from .nose.decorators import skipif
+    return skipif(condition, *args, **kwargs)
+
+
+def knownfailureif(fail_condition, msg=None, known_exception_class=None):
     """
 
     Assume a will fail if *fail_condition* is True. *fail_condition*
@@ -42,32 +48,8 @@ def knownfailureif(fail_condition, msg=None, known_exception_class=None ):
     if the exception is an instance of this class. (Default = None)
 
     """
-    # based on numpy.testing.dec.knownfailureif
-    if msg is None:
-        msg = 'Test known to fail'
-    def known_fail_decorator(f):
-        # Local import to avoid a hard nose dependency and only incur the
-        # import time overhead at actual test-time.
-        import nose
-        def failer(*args, **kwargs):
-            try:
-                # Always run the test (to generate images).
-                result = f(*args, **kwargs)
-            except Exception as err:
-                if fail_condition:
-                    if known_exception_class is not None:
-                        if not isinstance(err,known_exception_class):
-                            # This is not the expected exception
-                            raise
-                    # (Keep the next ultra-long comment so in shows in console.)
-                    raise KnownFailureTest(msg) # An error here when running nose means that you don't have the matplotlib.testing.noseclasses:KnownFailure plugin in use.
-                else:
-                    raise
-            if fail_condition and fail_condition != 'indeterminate':
-                raise KnownFailureDidNotFailTest(msg)
-            return result
-        return nose.tools.make_decorator(f)(failer)
-    return known_fail_decorator
+    from .nose.decorators import knownfailureif
+    return knownfailureif(fail_condition, msg, known_exception_class)
 
 
 def _do_cleanup(original_units_registry, original_settings):
@@ -211,7 +193,7 @@ class ImageComparisonTest(CleanupTest):
     def test(self):
         baseline_dir, result_dir = _image_directories(self._func)
         if self._style != 'classic':
-            raise KnownFailureTest('temporarily disabled until 2.0 tag')
+            xfail('temporarily disabled until 2.0 tag')
         for fignum, baseline in zip(plt.get_fignums(), self._baseline_images):
             for extension in self._extensions:
                 will_fail = not extension in comparable_formats()
@@ -263,12 +245,13 @@ class ImageComparisonTest(CleanupTest):
                                 '(RMS %(rms).3f)'%err)
                     except ImageComparisonFailure:
                         if not check_freetype_version(self._freetype_version):
-                            raise KnownFailureTest(
+                            xfail(
                                 "Mismatched version of freetype.  Test requires '%s', you have '%s'" %
                                 (self._freetype_version, ft2font.__freetype_version__))
                         raise
 
                 yield (do_test,)
+
 
 def image_comparison(baseline_images=None, extensions=None, tol=0,
                      freetype_version=None, remove_text=False,
@@ -428,7 +411,7 @@ def switch_backend(backend):
                 plt.switch_backend(prev_backend)
             return result
 
-        return nose.tools.make_decorator(func)(backend_switcher)
+        return copy_metadata(func, backend_switcher)
     return switch_backend_decorator
 
 
@@ -447,7 +430,6 @@ def skip_if_command_unavailable(cmd):
     try:
         check_output(cmd)
     except:
-        from nose import SkipTest
-        raise SkipTest('missing command: %s' % cmd[0])
+        skip('missing command: %s' % cmd[0])
 
     return lambda f: f
