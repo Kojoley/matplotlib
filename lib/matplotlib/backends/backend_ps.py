@@ -8,7 +8,7 @@ from __future__ import (absolute_import, division, print_function,
 import six
 from six.moves import StringIO
 
-import glob, math, os, shutil, sys, time
+import glob, math, os, shutil, sys, time, datetime
 def _fn_name(): return sys._getframe(1).f_code.co_name
 import io
 
@@ -1084,7 +1084,8 @@ class FigureCanvasPS(FigureCanvasBase):
             # See https://reproducible-builds.org/specs/source-date-epoch/
             source_date_epoch = os.getenv("SOURCE_DATE_EPOCH")
             if source_date_epoch:
-                source_date = time.asctime(time.gmtime(int(source_date_epoch)))
+                source_date = datetime.datetime.utcfromtimestamp(
+                    int(source_date_epoch) ).strftime("%a %b %e %T %Y")
             else:
                 source_date = time.ctime()
             print("%%CreationDate: "+source_date, file=fh)
@@ -1274,7 +1275,8 @@ class FigureCanvasPS(FigureCanvasBase):
             # See https://reproducible-builds.org/specs/source-date-epoch/
             source_date_epoch = os.getenv("SOURCE_DATE_EPOCH")
             if source_date_epoch:
-                source_date = time.asctime(time.gmtime(int(source_date_epoch)))
+                source_date = datetime.datetime.utcfromtimestamp(
+                    int(source_date_epoch) ).strftime("%a %b %e %T %Y")
             else:
                 source_date = time.ctime()
             print("%%CreationDate: "+source_date, file=fh)
