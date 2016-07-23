@@ -9,6 +9,14 @@ from ..testing.decorators import knownfailureif, skipif
 from pylab import *
 
 
+# Filter any tests that can leak from importing pylab
+for varname in list(globals()):
+    if varname == 'test' or \
+       varname.startswith('Test') or \
+       varname.startswith('test_'):
+        del globals()[varname]
+
+
 SKIPIF_CONDITION = []
 
 
