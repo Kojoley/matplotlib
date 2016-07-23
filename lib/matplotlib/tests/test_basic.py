@@ -9,6 +9,14 @@ from matplotlib.testing.decorators import knownfailureif
 from pylab import *
 
 
+# Filter any tests that can leak from importing pylab
+for varname in globals().keys():
+    if varname == 'test' or \
+       varname.startswith('Test') or \
+       varname.startswith('test_'):
+        del globals()[varname]
+
+
 def test_simple():
     assert_equal(1 + 1, 2)
 
