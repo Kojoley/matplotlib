@@ -3,10 +3,8 @@ source=
     matplotlib
     mpl_toolkits
 [report]
-omit =
-    lib/matplotlib/tests/*
-    lib/matplotlib/testing/*
-    lib/mpl_toolkits/tests/*
-
 exclude_lines =
     raise NotImplemented
+    if __name__ == .__main__.:
+    raise nose.SkipTest
+    raise SkipTest
