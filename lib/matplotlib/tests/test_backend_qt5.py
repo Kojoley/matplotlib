@@ -28,13 +28,17 @@ try:
 
     py_qt_ver = int(__version__.split('.')[0])
     HAS_QT = py_qt_ver == 5
+    QT_MSG = 'PyQt5 needed, but found Qt%d' % py_qt_ver
 
 except ImportError:
     HAS_QT = False
+    QT_MSG = 'PyQt5 was not found'
+
+needs_pyqt5 = knownfailureif(not HAS_QT, msg=QT_MSG)
 
 
 @cleanup
-@knownfailureif(not HAS_QT)
+@needs_pyqt5
 @switch_backend('Qt5Agg')
 def test_fig_close():
     # save the state of Gcf.figs
@@ -75,7 +79,7 @@ def assert_correct_key(qt_key, qt_mods, answer):
 
 
 @cleanup
-@knownfailureif(not HAS_QT)
+@needs_pyqt5
 def test_shift():
     assert_correct_key(QtCore.Qt.Key_A,
                        ShiftModifier,
@@ -83,7 +87,7 @@ def test_shift():
 
 
 @cleanup
-@knownfailureif(not HAS_QT)
+@needs_pyqt5
 def test_lower():
     assert_correct_key(QtCore.Qt.Key_A,
                        QtCore.Qt.NoModifier,
@@ -91,7 +95,7 @@ def test_lower():
 
 
 @cleanup
-@knownfailureif(not HAS_QT)
+@needs_pyqt5
 def test_control():
     assert_correct_key(QtCore.Qt.Key_A,
                        ControlModifier,
@@ -99,7 +103,7 @@ def test_control():
 
 
 @cleanup
-@knownfailureif(not HAS_QT)
+@needs_pyqt5
 def test_unicode_upper():
     assert_correct_key(QtCore.Qt.Key_Aacute,
                        ShiftModifier,
@@ -107,7 +111,7 @@ def test_unicode_upper():
 
 
 @cleanup
-@knownfailureif(not HAS_QT)
+@needs_pyqt5
 def test_unicode_lower():
     assert_correct_key(QtCore.Qt.Key_Aacute,
                        QtCore.Qt.NoModifier,
@@ -115,7 +119,7 @@ def test_unicode_lower():
 
 
 @cleanup
-@knownfailureif(not HAS_QT)
+@needs_pyqt5
 def test_alt_control():
     assert_correct_key(ControlKey,
                        AltModifier,
@@ -123,7 +127,7 @@ def test_alt_control():
 
 
 @cleanup
-@knownfailureif(not HAS_QT)
+@needs_pyqt5
 def test_control_alt():
     assert_correct_key(AltKey,
                        ControlModifier,
@@ -131,7 +135,7 @@ def test_control_alt():
 
 
 @cleanup
-@knownfailureif(not HAS_QT)
+@needs_pyqt5
 def test_modifier_order():
     assert_correct_key(QtCore.Qt.Key_Aacute,
                        (ControlModifier | AltModifier | SuperModifier),
@@ -139,7 +143,7 @@ def test_modifier_order():
 
 
 @cleanup
-@knownfailureif(not HAS_QT)
+@needs_pyqt5
 def test_backspace():
     assert_correct_key(QtCore.Qt.Key_Backspace,
                        QtCore.Qt.NoModifier,
@@ -147,7 +151,7 @@ def test_backspace():
 
 
 @cleanup
-@knownfailureif(not HAS_QT)
+@needs_pyqt5
 def test_backspace_mod():
     assert_correct_key(QtCore.Qt.Key_Backspace,
                        ControlModifier,
@@ -155,7 +159,7 @@ def test_backspace_mod():
 
 
 @cleanup
-@knownfailureif(not HAS_QT)
+@needs_pyqt5
 def test_non_unicode_key():
     assert_correct_key(QtCore.Qt.Key_Play,
                        QtCore.Qt.NoModifier,
