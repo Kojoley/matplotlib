@@ -322,6 +322,9 @@ def image_comparison(baseline_images=None, extensions=None, tol=0,
         # default extensions to test
         extensions = ['png', 'pdf', 'svg']
 
+    prng = np.random.RandomState(0)
+    prng.shuffle(extensions)
+
     if savefig_kwarg is None:
         #default no kwargs to savefig
         savefig_kwarg = dict()
