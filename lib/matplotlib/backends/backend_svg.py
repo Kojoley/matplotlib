@@ -1227,6 +1227,9 @@ class FigureCanvasSVG(FigureCanvasBase):
                 width, height, image_dpi, RendererSVG(w, h, svgwriter, filename, image_dpi),
                 bbox_inches_restore=_bbox_inches_restore)
 
+            # renderer should not be cached but current tightbox implementation
+            # relays on `figure._cachedRenderer`, but only on dry run
+            renderer.cacheable = kwargs.get('dryrun', False)
             self.figure.draw(renderer)
             renderer.finalize()
         finally:

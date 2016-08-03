@@ -1574,9 +1574,6 @@ class AnnotationBbox(martist.Artist, _AnnotationBase):
         """
         Draw the :class:`Annotation` object to the given *renderer*.
         """
-
-        if renderer is not None:
-            self._renderer = renderer
         if not self.get_visible():
             return
 

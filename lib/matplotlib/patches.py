@@ -4596,9 +4596,6 @@ class ConnectionPatch(FancyArrowPatch):
         """
         Draw.
         """
-
-        if renderer is not None:
-            self._renderer = renderer
         if not self.get_visible():
             return
 

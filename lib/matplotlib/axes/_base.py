@@ -2381,7 +2381,10 @@ class _AxesBase(martist.Artist):
         mimage._draw_list_compositing_images(renderer, self, dsu)
 
         renderer.close_group('axes')
-        self._cachedRenderer = renderer
+        if getattr(renderer, 'cacheable', True):
+            self._cachedRenderer = renderer
+        else:
+            self._cachedRenderer = None
         self.stale = False
 
     def draw_artist(self, a):

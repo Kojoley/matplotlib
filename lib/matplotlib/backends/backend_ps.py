@@ -1065,6 +1065,9 @@ class FigureCanvasPS(FigureCanvasBase):
             width, height, dpi, ps_renderer,
             bbox_inches_restore=_bbox_inches_restore)
 
+        # renderer should not be cached but current tightbox implementation
+        # relays on `figure._cachedRenderer`, but only on dry run
+        renderer.cacheable = kwargs.get('dryrun', False)
         self.figure.draw(renderer)
 
         if dryrun: # return immediately if dryrun (tightbbox=True)
@@ -1247,6 +1250,9 @@ class FigureCanvasPS(FigureCanvasBase):
             width, height, dpi, ps_renderer,
             bbox_inches_restore=_bbox_inches_restore)
 
+        # renderer should not be cached but current tightbox implementation
+        # relays on `figure._cachedRenderer`, but only on dry run
+        renderer.cacheable = kwargs.get('dryrun', False)
         self.figure.draw(renderer)
 
         if dryrun: # return immediately if dryrun (tightbbox=True)

@@ -1264,7 +1264,10 @@ class Figure(Artist):
         renderer.close_group('figure')
         self.stale = False
 
-        self._cachedRenderer = renderer
+        if getattr(renderer, 'cacheable', True):
+            self._cachedRenderer = renderer
+        else:
+            self._cachedRenderer = None
         self.canvas.draw_event(renderer)
 
     def draw_artist(self, a):

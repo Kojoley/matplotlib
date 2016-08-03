@@ -2532,6 +2532,9 @@ class FigureCanvasPdf(FigureCanvasBase):
                 self.figure, width, height, image_dpi,
                 RendererPdf(file, image_dpi, height, width),
                 bbox_inches_restore=_bbox_inches_restore)
+            # renderer should not be cached but current tightbox implementation
+            # relays on `figure._cachedRenderer`, but only on dry run
+            renderer.cacheable = kwargs.get('dryrun', False)
             self.figure.draw(renderer)
             renderer.finalize()
         finally:

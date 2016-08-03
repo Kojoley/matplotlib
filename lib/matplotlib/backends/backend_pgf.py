@@ -765,6 +765,9 @@ class FigureCanvasPgf(FigureCanvasBase):
     def _print_pgf_to_fh(self, fh, *args, **kwargs):
         if kwargs.get("dryrun", False):
             renderer = RendererPgf(self.figure, None, dummy=True)
+            # renderer should not be cached but current tightbox implementation
+            # relays on `figure._cachedRenderer`, but only on dry run
+            renderer.cacheable = kwargs.get('dryrun', False)
             self.figure.draw(renderer)
             return
 
@@ -811,6 +814,9 @@ class FigureCanvasPgf(FigureCanvasBase):
         renderer = MixedModeRenderer(self.figure, w, h, dpi,
                                      RendererPgf(self.figure, fh),
                                      bbox_inches_restore=_bbox_inches_restore)
+        # renderer should not be cached but current tightbox implementation
+        # relays on `figure._cachedRenderer`, but only on dry run
+        renderer.cacheable = kwargs.get('dryrun', False)
         self.figure.draw(renderer)
 
         # end the pgfpicture environment

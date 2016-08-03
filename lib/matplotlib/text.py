@@ -45,14 +45,14 @@ def _process_text_args(override, fontdict=None, **kwargs):
 
 
 @contextlib.contextmanager
-def _wrap_text(textobj):
+def _wrap_text(textobj, renderer):
     """
     Temporarily inserts newlines to the text if the wrap option is enabled.
     """
     if textobj.get_wrap():
         old_text = textobj.get_text()
         try:
-            textobj.set_text(textobj._get_wrapped_text())
+            textobj.set_text(textobj._get_wrapped_text(renderer))
             yield textobj
         finally:
             textobj.set_text(old_text)
@@ -228,7 +228,6 @@ class Text(Artist):
         self._rotation = rotation
         self._fontproperties = fontproperties
         self._bbox_patch = None  # a FancyBboxPatch instance
-        self._renderer = None
         if linespacing is None:
             linespacing = 1.2   # Maybe use rcParam later.
         self._linespacing = linespacing
@@ -261,7 +260,7 @@ class Text(Artist):
         if six.callable(self._contains):
             return self._contains(self, mouseevent)
 
-        if not self.get_visible() or self._renderer is None:
+        if not self.get_visible() or self.figure._cachedRenderer is None:
             return False, {}
 
         l, b, w, h = self.get_window_extent().bounds
@@ -690,17 +689,17 @@ class Text(Artist):
 
         return min(h1, h2)
 
-    def _get_rendered_text_width(self, text):
+    def _get_rendered_text_width(self, text, renderer):
         """
         Returns the width of a given text string, in pixels.
         """
-        w, h, d = self._renderer.get_text_width_height_descent(
+        w, h, d = renderer.get_text_width_height_descent(
             text,
             self.get_fontproperties(),
             False)
         return math.ceil(w)
 
-    def _get_wrapped_text(self):
+    def _get_wrapped_text(self, renderer):
         """
         Return a copy of the text with new lines added, so that
         the text is wrapped relative to the parent figure.
@@ -720,8 +719,9 @@ class Text(Artist):
             # not using the longest current line width in the line being built
             sub_words = word.split('\n')
             for i in range(len(sub_words)):
+                # TODO: Replace bunch of concatenations with string builder
                 current_width = self._get_rendered_text_width(
-                    line + ' ' + sub_words[i])
+                    line + ' ' + sub_words[i], renderer)
 
                 # Split long lines, and each newline found in the current word
                 if current_width > line_width or i > 0:
@@ -740,8 +740,6 @@ class Text(Artist):
         """
         Draws the :class:`Text` object to the given *renderer*.
         """
-        if renderer is not None:
-            self._renderer = renderer
         if not self.get_visible():
             return
         if self.get_text() == '':
@@ -749,7 +747,7 @@ class Text(Artist):
 
         renderer.open_group('text', self.get_gid())
 
-        with _wrap_text(self) as textobj:
+        with _wrap_text(self, renderer) as textobj:
             bbox, info, descent = textobj._get_layout(renderer)
             trans = textobj.get_transform()
 
@@ -909,7 +907,7 @@ class Text(Artist):
                 self._verticalalignment, self._horizontalalignment,
                 hash(self._fontproperties),
                 self._rotation, self._rotation_mode,
-                self.figure.dpi, id(self._renderer),
+                self.figure.dpi
                 )
 
     def get_text(self):
@@ -955,14 +953,16 @@ class Text(Artist):
             self.figure.dpi = dpi
         if self.get_text() == '':
             tx, ty = self._get_xy_display()
+            # TODO: restore `self.figure.dpi`
             return Bbox.from_bounds(tx, ty, 0, 0)
 
-        if renderer is not None:
-            self._renderer = renderer
-        if self._renderer is None:
+        if renderer is None:
+            renderer = self.figure._cachedRenderer
+        if renderer is None:
+            # TODO: restore `self.figure.dpi`
             raise RuntimeError('Cannot get window extent w/o renderer')
 
-        bbox, info, descent = self._get_layout(self._renderer)
+        bbox, info, descent = self._get_layout(renderer)
         x, y = self.get_unitless_position()
         x, y = self.get_transform().transform_point((x, y))
         bbox = bbox.translated(x, y)
@@ -2321,9 +2321,6 @@ class Annotation(Text, _AnnotationBase):
         """
         Draw the :class:`Annotation` object to the given *renderer*.
         """
-
-        if renderer is not None:
-            self._renderer = renderer
         if not self.get_visible():
             return
 
