@@ -107,7 +107,7 @@ L 19.59375 67.59375
 z
 " id="STIXGeneral-Regular-1d7e7"/>
    </defs>
-   <g transform="translate(171.42 31.68)scale(0.12 -0.12)">
+   <g transform="translate(171 31.5)scale(0.12 -0.12)">
     <use transform="translate(0 59.08125)scale(0.49)" xlink:href="#STIXGeneral-Regular-1d7e5"/>
     <use transform="translate(-21.900001 0.703125)" xlink:href="#STIXGeneral-Regular-221a"/>
     <use transform="translate(83.399986 0.453125)" xlink:href="#STIXGeneral-Italic-1d639"/>

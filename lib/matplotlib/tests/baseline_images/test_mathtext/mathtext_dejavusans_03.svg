@@ -60,6 +60,19 @@ Q 46.296875 13.28125 46.296875 17.671875
 Q 46.296875 21.96875 43.28125 24.5 
 Q 40.28125 27.046875 33.796875 28.21875 
 " id="DejaVuSans-24"/>
+    <path d="M 12.40625 8.296875 
+L 28.515625 8.296875 
+L 28.515625 63.921875 
+L 10.984375 60.40625 
+L 10.984375 69.390625 
+L 28.421875 72.90625 
+L 38.28125 72.90625 
+L 38.28125 8.296875 
+L 54.390625 8.296875 
+L 54.390625 0 
+L 12.40625 0 
+z
+" id="DejaVuSans-31"/>
     <path d="M 31.78125 66.40625 
 Q 24.171875 66.40625 20.328125 58.90625 
 Q 16.5 51.421875 16.5 36.375 
@@ -101,29 +114,16 @@ L 50.875 54.6875
 L 60.296875 54.6875 
 z
 " id="DejaVuSans-Oblique-79"/>
-    <path d="M 12.40625 8.296875 
-L 28.515625 8.296875 
-L 28.515625 63.921875 
-L 10.984375 60.40625 
-L 10.984375 69.390625 
-L 28.421875 72.90625 
-L 38.28125 72.90625 
-L 38.28125 8.296875 
-L 54.390625 8.296875 
-L 54.390625 0 
-L 12.40625 0 
-z
-" id="DejaVuSans-31"/>
    </defs>
-   <g transform="translate(170.880000 31.020000)scale(0.120000 -0.120000)">
-    <use transform="translate(0.000000 54.810938)scale(0.700000)" xlink:href="#DejaVuSans-24"/>
-    <use transform="translate(44.536133 54.810938)scale(0.700000)" xlink:href="#DejaVuSans-31"/>
-    <use transform="translate(89.072266 54.810938)scale(0.700000)" xlink:href="#DejaVuSans-30"/>
-    <use transform="translate(133.608398 54.810938)scale(0.700000)" xlink:href="#DejaVuSans-30"/>
-    <use transform="translate(178.144531 54.810938)scale(0.700000)" xlink:href="#DejaVuSans-2e"/>
-    <use transform="translate(200.395508 54.810938)scale(0.700000)" xlink:href="#DejaVuSans-30"/>
-    <use transform="translate(244.931641 54.810938)scale(0.700000)" xlink:href="#DejaVuSans-30"/>
-    <use transform="translate(124.000000 -25.012500)scale(0.700000)" xlink:href="#DejaVuSans-Oblique-79"/>
+   <g transform="translate(170.5 31)scale(0.12 -0.12)">
+    <use transform="translate(0 54.810938)scale(0.7)" xlink:href="#DejaVuSans-24"/>
+    <use transform="translate(44.536133 54.810938)scale(0.7)" xlink:href="#DejaVuSans-31"/>
+    <use transform="translate(89.072266 54.810938)scale(0.7)" xlink:href="#DejaVuSans-30"/>
+    <use transform="translate(133.608398 54.810938)scale(0.7)" xlink:href="#DejaVuSans-30"/>
+    <use transform="translate(178.144531 54.810938)scale(0.7)" xlink:href="#DejaVuSans-2e"/>
+    <use transform="translate(200.395508 54.810938)scale(0.7)" xlink:href="#DejaVuSans-30"/>
+    <use transform="translate(244.931641 54.810938)scale(0.7)" xlink:href="#DejaVuSans-30"/>
+    <use transform="translate(124 -25.0125)scale(0.7)" xlink:href="#DejaVuSans-Oblique-79"/>
     <path d="M 0 19.51875 
 L 0 25.76875 
 L 289.467773 25.76875 

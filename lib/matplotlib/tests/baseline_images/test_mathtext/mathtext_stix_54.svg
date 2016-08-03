@@ -315,7 +315,7 @@ Q 31.296875 1.203125 34.640625 9.34375
 Q 38 17.5 38 32.5 
 " id="STIXGeneral-Regular-30"/>
    </defs>
-   <g transform="translate(129.54 28.86)scale(0.12 -0.12)">
+   <g transform="translate(129.5 29.5)scale(0.12 -0.12)">
     <use transform="translate(0 -40.8125)scale(0.878364)" xlink:href="#STIXSizeTwoSym-Regular-28"/>
     <use transform="translate(68.758377 38.885312)scale(0.7)" xlink:href="#STIXGeneral-Regular-2202"/>
     <use transform="translate(102.808668 63.577812)scale(0.49)" xlink:href="#STIXGeneral-Regular-32"/>

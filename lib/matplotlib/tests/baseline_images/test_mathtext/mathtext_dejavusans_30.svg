@@ -114,10 +114,10 @@ Q 6.59375 54.828125 13.0625 64.515625
 Q 19.53125 74.21875 31.78125 74.21875 
 " id="DejaVuSans-30"/>
    </defs>
-   <g transform="translate(180.240000 31.020000)scale(0.120000 -0.120000)">
-    <use transform="translate(0.000000 0.762500)" xlink:href="#DejaVuSansDisplay-222e"/>
-    <use transform="translate(86.744141 85.918750)scale(0.700000)" xlink:href="#DejaVuSans-221e"/>
-    <use transform="translate(71.759766 -51.143750)scale(0.700000)" xlink:href="#DejaVuSans-30"/>
+   <g transform="translate(180 31)scale(0.12 -0.12)">
+    <use transform="translate(0 0.7625)" xlink:href="#DejaVuSansDisplay-222e"/>
+    <use transform="translate(86.744141 85.91875)scale(0.7)" xlink:href="#DejaVuSans-221e"/>
+    <use transform="translate(71.759766 -51.14375)scale(0.7)" xlink:href="#DejaVuSans-30"/>
    </g>
   </g>
  </g>

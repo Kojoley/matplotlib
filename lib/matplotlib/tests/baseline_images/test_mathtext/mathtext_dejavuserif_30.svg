@@ -132,10 +132,10 @@ Q 56.984375 18.5 50.34375 8.53125
 Q 43.703125 -1.421875 31.78125 -1.421875 
 " id="DejaVuSerif-30"/>
    </defs>
-   <g transform="translate(181.860000 29.580000)scale(0.120000 -0.120000)">
-    <use transform="translate(0.000000 0.968750)" xlink:href="#STIXGeneral-Regular-222e"/>
-    <use transform="translate(59.994760 62.612500)scale(0.700000)" xlink:href="#DejaVuSerif-221e"/>
-    <use transform="translate(48.457885 -51.793750)scale(0.700000)" xlink:href="#DejaVuSerif-30"/>
+   <g transform="translate(181.5 29.5)scale(0.12 -0.12)">
+    <use transform="translate(0 0.96875)" xlink:href="#STIXGeneral-Regular-222e"/>
+    <use transform="translate(59.99476 62.6125)scale(0.7)" xlink:href="#DejaVuSerif-221e"/>
+    <use transform="translate(48.457885 -51.79375)scale(0.7)" xlink:href="#DejaVuSerif-30"/>
    </g>
   </g>
  </g>

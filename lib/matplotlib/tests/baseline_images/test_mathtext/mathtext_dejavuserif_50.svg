@@ -155,7 +155,7 @@ L 49.421875 0
 z
 " id="DejaVuSerif-31"/>
    </defs>
-   <g transform="translate(127.62 29.76)scale(0.12 -0.12)">
+   <g transform="translate(127.5 30)scale(0.12 -0.12)">
     <use transform="translate(0 -21.9375)scale(1.047485)" xlink:href="#STIXSizeOneSym-Regular-28"/>
     <use transform="translate(49.022995 52.354687)scale(0.7)" xlink:href="#DejaVuSerif-Italic-70"/>
     <use transform="translate(49.022995 -39.15625)scale(0.7)" xlink:href="#DejaVuSerif-32"/>

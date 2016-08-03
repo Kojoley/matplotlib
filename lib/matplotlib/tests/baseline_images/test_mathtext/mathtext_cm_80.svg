@@ -516,7 +516,7 @@ Q 22.953125 48.484375 18.875 42.84375
 Q 14.796875 37.203125 14.796875 27.296875 
 " id="DejaVuSans-64"/>
    </defs>
-   <g transform="translate(91.5 30.31125)scale(0.12 -0.12)">
+   <g transform="translate(91.5 30.5)scale(0.12 -0.12)">
     <use transform="translate(0 0.015625)" xlink:href="#Cmmi10-3b"/>
     <use transform="translate(45.244141 0.015625)" xlink:href="#DejaVuSans-20"/>
     <use transform="translate(77.03125 0.015625)" xlink:href="#Cmmi10-3a"/>

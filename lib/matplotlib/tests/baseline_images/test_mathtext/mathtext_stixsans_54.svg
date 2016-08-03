@@ -251,7 +251,7 @@ Q 37 13.90625 38.390625 19.84375
 Q 39.796875 25.796875 39.796875 33 
 " id="STIXGeneral-Regular-1d7e2"/>
    </defs>
-   <g transform="translate(128.7 28.8)scale(0.12 -0.12)">
+   <g transform="translate(128.5 29)scale(0.12 -0.12)">
     <use transform="translate(0 -41.375)scale(0.889461)" xlink:href="#STIXSizeTwoSym-Regular-28"/>
     <use transform="translate(71.42099 39.415312)scale(0.7)" xlink:href="#STIXGeneral-Regular-2202"/>
     <use transform="translate(104.94587 64.781562)scale(0.49)" xlink:href="#STIXGeneral-Regular-1d7e4"/>

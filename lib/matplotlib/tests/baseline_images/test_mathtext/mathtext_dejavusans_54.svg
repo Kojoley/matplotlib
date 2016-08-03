@@ -236,7 +236,7 @@ Q 6.59375 54.828125 13.0625 64.515625
 Q 19.53125 74.21875 31.78125 74.21875 
 " id="DejaVuSans-30"/>
    </defs>
-   <g transform="translate(116.82 29.58)scale(0.12 -0.12)">
+   <g transform="translate(116.5 29.5)scale(0.12 -0.12)">
     <use transform="translate(0 -38.203125)scale(0.938381)" xlink:href="#STIXSizeTwoSym-Regular-28"/>
     <use transform="translate(77.292358 45.545313)scale(0.7)" xlink:href="#DejaVuSans-2202"/>
     <use transform="translate(114.158569 72.342188)scale(0.49)" xlink:href="#DejaVuSans-32"/>

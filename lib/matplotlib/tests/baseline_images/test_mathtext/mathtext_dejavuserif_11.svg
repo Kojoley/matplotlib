@@ -187,7 +187,7 @@ L 26.90625 156.59375
 z
 " id="STIXSizeTwoSym-Regular-5d"/>
    </defs>
-   <g transform="translate(167.7 27.3)scale(0.12 -0.12)">
+   <g transform="translate(167.5 27.5)scale(0.12 -0.12)">
     <use transform="translate(0 -62.215625)scale(1.01023)" xlink:href="#STIXSizeTwoSym-Regular-5b"/>
     <use transform="translate(46.358994 -62.215625)scale(1.01023)" xlink:href="#STIXSizeTwoSym-Regular-230a"/>
     <use transform="translate(116.28299 44.965625)scale(0.7)" xlink:href="#DejaVuSerif-35"/>

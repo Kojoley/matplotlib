@@ -105,7 +105,7 @@ Q 24.796875 6.40625 24.796875 45.09375
 Q 24.796875 83.796875 8.59375 103.59375 
 " id="STIXSizeOneSym-Regular-29"/>
    </defs>
-   <g transform="translate(176.04 28.8)scale(0.12 -0.12)">
+   <g transform="translate(176 29)scale(0.12 -0.12)">
     <use transform="translate(0 -29.671875)scale(1.007203)" xlink:href="#STIXSizeOneSym-Regular-28"/>
     <use transform="translate(79.150986 38.451562)scale(0.7)" xlink:href="#DejaVuSans-Oblique-6e"/>
     <use transform="translate(47.150986 -39.7375)scale(0.7)" xlink:href="#DejaVuSans-Oblique-6b"/>

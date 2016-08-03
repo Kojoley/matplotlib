@@ -102,7 +102,7 @@ Q 32.40625 11.90625 35.59375 18.546875
 Q 38.796875 25.203125 38.796875 30.59375 
 " id="STIXGeneral-Italic-62"/>
    </defs>
-   <g transform="translate(148.8 30.31125)scale(0.12 -0.12)">
+   <g transform="translate(148.5 30)scale(0.12 -0.12)">
     <use xlink:href="#STIXGeneral-Regular-2016"/>
     <use transform="translate(52.299988 0)" xlink:href="#STIXGeneral-Italic-61"/>
     <use transform="translate(102.399979 0)" xlink:href="#STIXGeneral-Regular-2016"/>

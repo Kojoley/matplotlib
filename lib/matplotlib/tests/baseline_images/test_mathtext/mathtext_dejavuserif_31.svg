@@ -160,7 +160,7 @@ Q 40.28125 53.328125 42.703125 52.984375
 Q 45.125 52.640625 47.796875 52 
 " id="DejaVuSerif-72"/>
    </defs>
-   <g transform="translate(148.44 30.18)scale(0.12 -0.12)">
+   <g transform="translate(148 30.5)scale(0.12 -0.12)">
     <use transform="translate(0 0.015625)" xlink:href="#DejaVuSerif-Italic-66"/>
     <use transform="translate(44.621667 36.35)scale(0.7)" xlink:href="#Cmsy10-30"/>
     <use transform="translate(161.284362 0.015625)" xlink:href="#DejaVuSerif-Italic-66"/>

@@ -130,7 +130,7 @@ Q 39.703125 55.765625 41.0625 55.515625
 z
 " id="DejaVuSans-72"/>
    </defs>
-   <g transform="translate(148.44 30.42)scale(0.12 -0.12)">
+   <g transform="translate(148 30.5)scale(0.12 -0.12)">
     <use transform="translate(0 0.584375)" xlink:href="#DejaVuSans-Oblique-66"/>
     <use transform="translate(42.652786 38.865625)scale(0.7)" xlink:href="#Cmsy10-30"/>
     <use transform="translate(162.042435 0.584375)" xlink:href="#DejaVuSans-Oblique-66"/>

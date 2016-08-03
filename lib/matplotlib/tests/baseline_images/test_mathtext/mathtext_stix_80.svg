@@ -354,7 +354,7 @@ Q 22.953125 48.484375 18.875 42.84375
 Q 14.796875 37.203125 14.796875 27.296875 
 " id="DejaVuSans-64"/>
    </defs>
-   <g transform="translate(93.72 30.31125)scale(0.12 -0.12)">
+   <g transform="translate(93.5 30.5)scale(0.12 -0.12)">
     <use transform="translate(0 0.015625)" xlink:href="#STIXGeneral-Regular-2c"/>
     <use transform="translate(39.439981 0.015625)" xlink:href="#DejaVuSans-20"/>
     <use transform="translate(71.22709 0.015625)" xlink:href="#STIXGeneral-Regular-2e"/>

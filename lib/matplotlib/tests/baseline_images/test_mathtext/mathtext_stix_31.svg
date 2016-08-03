@@ -200,7 +200,7 @@ Q 7 42.59375 15.5 46
 z
 " id="STIXGeneral-Regular-72"/>
    </defs>
-   <g transform="translate(154.14 30.66)scale(0.12 -0.12)">
+   <g transform="translate(154 30.5)scale(0.12 -0.12)">
     <use transform="translate(0 0.267188)" xlink:href="#STIXGeneral-Italic-66"/>
     <use transform="translate(38.950769 35.542188)scale(0.7)" xlink:href="#STIXGeneral-Regular-2032"/>
     <use transform="translate(135.790121 0.267188)" xlink:href="#STIXGeneral-Italic-66"/>
