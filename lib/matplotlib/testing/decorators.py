@@ -183,6 +183,7 @@ class ImageComparisonTest(CleanupTest):
         try:
             matplotlib.style.use(cls._style)
             matplotlib.testing.set_font_settings_for_testing()
+            matplotlib.rc('svg', hashsalt='determinism')
             cls._func()
         except:
             # Restore original settings before raising errors during the update.
