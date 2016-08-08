@@ -44,9 +44,10 @@ env:
     - PANDAS=
     - NPROC=2
     - TEST_ARGS=--no-pep8
-    - NOSE_ARGS="--processes=$NPROC --process-timeout=300"
+    - NOSE_ARGS="--processes=0 --process-timeout=300"
     - PYTHON_ARGS=
     - DELETE_FONT_CACHE=
+    - PYTHONHASHSEED=random
 
 matrix:
   include:
@@ -58,8 +59,8 @@ matrix:
       env: PANDAS=pandas NOSE_ARGS=--with-coverage DELETE_FONT_CACHE=1
     - python: 3.5
       env: TEST_ARGS=--pep8
-    - python: 3.5
-      env: BUILD_DOCS=true
+    #- python: 3.5
+    #  env: BUILD_DOCS=true
     - python: "nightly"
       env: PRE=--pre
     - os: osx
@@ -153,9 +154,9 @@ script:
       fi
       export MPL_REPO_DIR=$PWD  # needed for pep8-conformance test of the examples
       if [[ $TRAVIS_OS_NAME == 'osx' ]]; then
-        python tests.py $NOSE_ARGS $TEST_ARGS
+        python tests.py $NOSE_ARGS $TEST_ARGS matplotlib.tests.test_backend_svg
       else
-        gdb -return-child-result -batch -ex r -ex bt --args python $PYTHON_ARGS tests.py $NOSE_ARGS $TEST_ARGS
+        gdb -return-child-result -batch -ex r -ex bt --args python $PYTHON_ARGS tests.py $NOSE_ARGS $TEST_ARGS matplotlib.tests.test_backend_svg
       fi
     else
       cd doc
