@@ -26,31 +26,31 @@ environment:
     # theoretically the CONDA_INSTALL_LOCN could be only two: one for 32bit,
     # one for 64bit because we construct envs anyway. But using one for the
     # right python version is hopefully making it fast due to package caching.
-    - TARGET_ARCH: "x64"
-      CONDA_PY: "27"
-      CONDA_NPY: "18"
-      PYTHON_VERSION: "2.7"
-      TEST_ALL: "no"
-      CONDA_INSTALL_LOCN: "C:\\Miniconda-x64"
-    - TARGET_ARCH: "x64"
-      CONDA_PY: "34"
-      CONDA_NPY: "110"
-      PYTHON_VERSION: "3.4"
-      TEST_ALL: "no"
-      CONDA_INSTALL_LOCN: "C:\\Miniconda3-x64"
-    - TARGET_ARCH: "x64"
-      CONDA_PY: "35"
-      CONDA_NPY: "110"
-      PYTHON_VERSION: "3.5"
-      TEST_ALL: "no"
-      CONDA_INSTALL_LOCN: "C:\\Miniconda35-x64"
-    - TARGET_ARCH: "x64"
-      CONDA_PY: "35"
-      CONDA_NPY: "110"
-      PYTHON_VERSION: "3.5"
-      TEST_ALL: "no"
-      CONDA_INSTALL_LOCN: "C:\\Miniconda35-x64"
-      USE_PYTEST: yes
+    #- TARGET_ARCH: "x64"
+    #  CONDA_PY: "27"
+    #  CONDA_NPY: "18"
+    #  PYTHON_VERSION: "2.7"
+    #  TEST_ALL: "no"
+    #  CONDA_INSTALL_LOCN: "C:\\Miniconda-x64"
+    #- TARGET_ARCH: "x64"
+    #  CONDA_PY: "34"
+    #  CONDA_NPY: "110"
+    #  PYTHON_VERSION: "3.4"
+    #  TEST_ALL: "no"
+    #  CONDA_INSTALL_LOCN: "C:\\Miniconda3-x64"
+    #- TARGET_ARCH: "x64"
+    #  CONDA_PY: "35"
+    #  CONDA_NPY: "110"
+    #  PYTHON_VERSION: "3.5"
+    #  TEST_ALL: "no"
+    #  CONDA_INSTALL_LOCN: "C:\\Miniconda35-x64"
+    #- TARGET_ARCH: "x64"
+    #  CONDA_PY: "35"
+    #  CONDA_NPY: "110"
+    #  PYTHON_VERSION: "3.5"
+    #  TEST_ALL: "no"
+    #  CONDA_INSTALL_LOCN: "C:\\Miniconda35-x64"
+    #  USE_PYTEST: yes
     - TARGET_ARCH: "x86"
       CONDA_PY: "27"
       CONDA_NPY: "18"
@@ -69,6 +69,11 @@ platform:
 
 # all our python builds have to happen in tests_script...
 build: false
+
+cache:
+  - '%USERPROFILE%\.cache\matplotlib'
+  - '%CONDA_INSTALL_LOCN%\.cache\pkgs'
+
 
 init:
   - cmd: "ECHO %PYTHON_VERSION% PYTEST=%USE_PYTEST% %CONDA_INSTALL_LOCN%"
@@ -153,8 +158,8 @@ test_script:
   - python -c "import matplotlib as m; m.use('tkagg'); import matplotlib.pyplot as plt; print(plt.get_backend())"
   # tests
   - if x%USE_PYTEST% == xyes echo The following args are passed to pytest %PYTEST_ARGS%
-  - if x%USE_PYTEST% == xyes py.test %PYTEST_ARGS% %TEST_ARGS%
-  - if x%USE_PYTEST% == xno python tests.py %TEST_ARGS%
+  - if x%USE_PYTEST% == xyes py.test %PYTEST_ARGS% %TEST_ARGS% lib/matplotlib/tests/test_backend_pgf.py
+  - if x%USE_PYTEST% == xno python tests.py %TEST_ARGS% matplotlib.tests.test_backend_pgf
   # Generate a html for visual tests
   - python visual_tests.py
 
@@ -183,6 +188,8 @@ after_test:
   - cmd: 'copy /Y %CONDA_INSTALL_LOCN%\conda-bld\win-64\*.bz2 dist || cmd /c "exit /b 0"'
   - cmd: dir dist\
   - cmd: echo finished...
+  # Clean cache from unesed packages
+  - conda clean --packages --yes
 
 artifacts:
   - path: dist\*
