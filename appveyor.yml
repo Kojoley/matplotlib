@@ -138,6 +138,16 @@ test_script:
   - cmd: if x%TEST_ALL% == xyes; conda install -q -c menpo ffmpeg # a repackaged version
   # This install sometimes failed randomly :-(
   #- cmd: choco install imagemagick
+  - ps: |
+      If ($Env:TEST_ALL -eq "yes") {
+        mkdir $Env:USERPROFILE\.fonts
+        $mirror = "http://mirrors.ctan.org/fonts/ps-type1/cm-super/pfb"
+        $fontnames = "sfss1000.pfb", "sfrm2074.pfb", "sfrm1000.pfb"
+        ForEach ($fn In $fontnames) {
+          Invoke-WebRequest -Uri $mirror/$fn -OutFile $Env:USERPROFILE\.fonts\$fn
+        }
+        fc-cache -f -v
+      }
 
   # Test import of tkagg backend
   - python -c "import matplotlib as m; m.use('tkagg'); import matplotlib.pyplot as plt; print(plt.get_backend())"
