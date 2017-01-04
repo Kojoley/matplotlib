@@ -229,7 +229,7 @@ class FigureCanvasWebAggCore(backend_agg.FigureCanvasAgg):
             # handles the differencing inline
             buff = _png.write_png(
                 output.view(dtype=np.uint8).reshape(output.shape + (4,)),
-                None, compression=6, filter=_png.PNG_FILTER_NONE)
+                None, compress_level=6, optimize=False)
 
             # Swap the renderer frames
             self._renderer, self._last_renderer = (

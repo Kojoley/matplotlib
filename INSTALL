@@ -139,7 +139,7 @@ cross compiling.
   export PKG_CONFIG=x86_64-pc-linux-gnu-pkg-config
 
 Once you have satisfied the requirements detailed below (mainly
-python, numpy, libpng and freetype), you can build matplotlib::
+python, numpy and freetype), you can build matplotlib::
 
   cd matplotlib
   python setup.py build
@@ -195,11 +195,6 @@ Required Dependencies
     Required for matplotlib's mathtext math rendering support.  If
     using pip, easy_install or installing from source, the installer
     will attempt to download and install `pyparsing` from PyPI.
-
-`libpng 1.2 (or later) <http://www.libpng.org>`__
-    library for loading and saving :term:`PNG` files (`download
-    <http://www.libpng.org/pub/png/libpng.html>`__). libpng requires
-    zlib.
 
 `pytz <http://pytz.sourceforge.net/>`__
     Used to manipulate time-zone aware datetimes.
@@ -318,8 +313,8 @@ Building on OSX
 ---------------
 
 The build situation on OSX is complicated by the various places one
-can get the libpng and freetype requirements (darwinports, fink,
-/usr/X11R6) and the different architectures (e.g., x86, ppc, universal) and
+can get the freetype requirements (darwinports, fink, /usr/X11R6) and
+the different architectures (e.g., x86, ppc, universal) and
 the different OSX version (e.g., 10.4 and 10.5). We recommend that you build
 the way we do for the OSX release: get the source from the tarball or the
 git repository and follow the instruction in :file:`README.osx`.
@@ -336,5 +331,5 @@ Visual Studio 2015 for 3.5 and 3.6.  Python extensions are recommended to be com
 with the same compiler.
 
 Since there is no canonical Windows package manager, the methods for building
-freetype, zlib, and libpng from source code are documented as a build script
+freetype from source code are documented as a build script
 at `matplotlib-winbuild <https://github.com/jbmohler/matplotlib-winbuild>`_.

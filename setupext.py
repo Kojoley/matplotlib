@@ -1262,50 +1262,6 @@ class FT2Font(SetupPackage):
         return ext
 
 
-class Png(SetupPackage):
-    name = "png"
-    pkg_names = {
-        "apt-get": "libpng12-dev",
-        "yum": "libpng-devel",
-        "dnf": "libpng-devel",
-        "brew": "libpng",
-        "port": "libpng",
-        "windows_url": "http://gnuwin32.sourceforge.net/packages/libpng.htm"
-        }
-
-    def check(self):
-        if sys.platform == 'win32':
-            check_include_file(get_include_dirs(), 'png.h', 'png')
-            return 'Using unknown version found on system.'
-
-        status, output = getstatusoutput("libpng-config --version")
-        if status == 0:
-            version = output
-        else:
-            version = None
-
-        try:
-            return self._check_for_pkg_config(
-                'libpng', 'png.h',
-                min_version='1.2', version=version)
-        except CheckFailed as e:
-            if has_include_file(get_include_dirs(), 'png.h'):
-                return str(e) + ' Using unknown version found on system.'
-            raise
-
-    def get_extension(self):
-        sources = [
-            'src/_png.cpp',
-            'src/mplutils.cpp'
-            ]
-        ext = make_extension('matplotlib._png', sources)
-        pkg_config.setup_extension(
-            ext, 'libpng', default_libraries=['png', 'z'],
-            alt_exec='libpng-config --ldflags')
-        Numpy().add_flags(ext)
-        return ext
-
-
 class Qhull(SetupPackage):
     name = "qhull"
 

@@ -78,7 +78,6 @@ mpl_packages = [
     setupext.LibAgg(),
     setupext.FreeType(),
     setupext.FT2Font(),
-    setupext.Png(),
     setupext.Qhull(),
     setupext.Image(),
     setupext.TTConv(),
