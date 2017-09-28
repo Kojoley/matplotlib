@@ -127,7 +127,7 @@ test_script:
   - python -c "import matplotlib as m; m.use('tkagg'); import matplotlib.pyplot as plt; print(plt.get_backend())"
   # tests
   - echo The following args are passed to pytest %PYTEST_ARGS%
-  - python tests.py %PYTEST_ARGS%
+  - '"C:\Program Files (x86)\Windows Kits\10\Debuggers\%TARGET_ARCH%\cdb.exe" -Gg -c "kp;qq" -o python tests.py %PYTEST_ARGS%'
   # Generate a html for visual tests
   - python tools/visualize_tests.py --no-browser
   - pip install codecov
