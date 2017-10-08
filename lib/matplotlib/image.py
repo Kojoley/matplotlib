@@ -541,7 +541,7 @@ class _ImageBase(martist.Artist, cm.ScalarMappable):
             raise TypeError("Image data can not convert to float")
 
         if (self._A.ndim not in (2, 3) or
-                (self._A.ndim == 3 and self._A.shape[-1] not in (3, 4))):
+                False):#(self._A.ndim == 3 and self._A.shape[-1] not in (3, 4))):
             raise TypeError("Invalid dimensions for image data")
 
         self._imcache = None

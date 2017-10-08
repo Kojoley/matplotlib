@@ -38,23 +38,30 @@ def read_png_int(file):
     file : str path or file-like object
     """
     im = Image.open(file)
-    '''
-    if im.mode not in ['RGB', 'RGBA']:
-        if 'transparency' in im.info:
-            im = im.convert('RGBA')
-        else:
-            im = im.convert('RGB')
-    '''
+    rawmode = im.png.im_rawmode
+    print('***', 'openmode', im.mode, rawmode)
+    b16 = im.png.im_rawmode.endswith(';16B')
+    #if im.png.im_rawmode.endswith(';16B'):
+    #    im.mode = im.png.im_rawmode
+    if 'transparency' in im.info:
+        im = im.convert('RGBA;16B' if b16 else 'RGBA')
+    elif im.mode.split(';', 1)[0] not in ['1', 'L', 'I', 'RGB', 'RGBA']:
+    #elif im.mode.split(';', 1)[0] not in ['I', 'RGB', 'RGBA']:
+        im = im.convert('RGB;16B' if b16 else 'RGB')
+    # TODO: F-mode
     #if im.png.im_rawmode == 'I;16B':
     #    im = im.convert(im.png.im_rawmode)
-    print('mode', im.mode)
-    if im.png.im_rawmode.endswith(';16B'):
+    print('***', 'workmode', im.mode, rawmode)
+    if im.mode == '1':
+        buffer = np.array(im, dtype=np.bool_)
+    elif b16:
         buffer = np.array(im, dtype=np.uint16)
     else:
-        buffer = np.array(im)
-    print('shape', buffer.shape)
-    if buffer.ndim == 2:
-        buffer = buffer[:, :, np.newaxis]
+        buffer = np.array(im, dtype=np.uint8)
+    print('>>> shape', buffer.shape)
+    #if buffer.ndim == 2:
+    #    buffer = buffer[:, :, np.newaxis]
+    #    print('reshaped', buffer.shape)
     return buffer
 
 
@@ -136,21 +143,24 @@ def write_png(buffer, file, dpi=None, compress_level=6, optimize=None, metadata=
     #buffer = np.frombuffer(buffer)
     buffer = np.asarray(buffer)
     # PIL does not like (w, h, 1) shape
-    buffer = buffer.squeeze()
-    #if buffer.ndim == 3 and buffer.shape[2] == 1:
-    #    buffer = buffer.reshape((2, -1))
+    #buffer = buffer.squeeze()
+    if buffer.ndim == 3 and buffer.shape[2] == 1:
+        buffer = buffer.reshape(buffer.shape[:2])
     #print('save', '>', buffer.shape, '<')
-    im = Image.fromarray(buffer)
-    '''
+    #im = Image.fromarray(buffer)
     if buffer.ndim == 3:
         mode = {1: 'L', 3: 'RGB', 4: 'RGBA'}[buffer.shape[2]]
     elif buffer.ndim == 2:
-        mode = '1'
+        mode = 'I'
     else:
         raise ValueError("Unsupported input buffer dimension")
-    print('mode', mode)
+    if buffer.itemsize == 2:
+        mode += ';16'
+    elif buffer.itemsize > 2:
+        raise ValueError("Unsupported input buffer dtype")
+    # TODO: support float
+    print('*** savemode', mode)
     im = Image.fromarray(buffer, mode=mode)
-    '''
 
     if dpi is not None:
         dpi = dpi, dpi
