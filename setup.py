@@ -105,7 +105,7 @@ class BuildExtraLibraries(BuildExtCommand):
         except (ValueError, AttributeError):
             pass
         for package in good_packages:
-            package.do_custom_build()
+            package.do_custom_build(self)
         return super().build_extensions()
 
 

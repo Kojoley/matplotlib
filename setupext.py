@@ -291,11 +291,16 @@ class SetupPackage:
         """
         return None
 
-    def do_custom_build(self):
+    def do_custom_build(self, cmd):
         """
         If a package needs to do extra custom things, such as building a
         third-party library, before building an extension, it should
         override this method.
+
+        Parameters
+        ----------
+        cmd : setuptools.command.build_ext
+            The 'build_ext' instance
         """
         pass
 
@@ -478,7 +483,7 @@ class FreeType(SetupPackage):
                 0, str(src_path / 'objs' / '.libs' / libfreetype))
             ext.define_macros.append(('FREETYPE_BUILD_TYPE', 'local'))
 
-    def do_custom_build(self):
+    def do_custom_build(self, cmd):
         # We're using a system freetype
         if options.get('system_freetype'):
             return
@@ -542,37 +547,72 @@ class FreeType(SetupPackage):
                 env=env, cwd=src_path)
             subprocess.check_call(["make"], env=env, cwd=src_path)
         else:
-            # compilation on windows
-            shutil.rmtree(str(pathlib.Path(src_path, "objs")),
-                          ignore_errors=True)
-            msbuild_platform = (
-                'x64' if platform.architecture()[0] == '64bit' else 'Win32')
-            base_path = pathlib.Path("build/freetype-2.6.1/builds/windows")
-            vc = 'vc2010'
-            sln_path = (
-                base_path / vc / "freetype.sln"
-            )
-            # https://developercommunity.visualstudio.com/comments/190992/view.html
-            (sln_path.parent / "Directory.Build.props").write_text("""
-<Project>
- <PropertyGroup>
-  <!-- The following line *cannot* be split over multiple lines. -->
-  <WindowsTargetPlatformVersion>$([Microsoft.Build.Utilities.ToolLocationHelper]::GetLatestSDKTargetPlatformVersion('Windows', '10.0'))</WindowsTargetPlatformVersion>
- </PropertyGroup>
-</Project>
-""")
-            cc = ccompiler.new_compiler()
-            cc.initialize()  # Get devenv & msbuild in the %PATH% of cc.spawn.
-            cc.spawn(["devenv", str(sln_path), "/upgrade"])
-            cc.spawn(["msbuild", str(sln_path),
-                      "/t:Clean;Build",
-                      f"/p:Configuration=Release;Platform={msbuild_platform}"])
-            # Move to the corresponding Unix build path.
-            (src_path / "objs" / ".libs").mkdir()
-            # Be robust against change of FreeType version.
-            lib_path, = (src_path / "objs" / vc / msbuild_platform).glob(
-                "freetype*.lib")
-            shutil.copy2(lib_path, src_path / "objs/.libs/libfreetype.lib")
+            assert cmd.compiler.compiler_type == 'msvc', (
+                'Support for other compilers is not implemented')
+
+            from distutils.msvccompiler import get_build_version
+            from setup_external_compile import fixproj, X64, tar_extract
+
+            if not cmd.compiler.initialized:
+                cmd.compiler.initialize()
+
+            # TODO: map msvc version to available freetype msvc solution
+            vc = {9: 'vc2008', 10: 'vc2010'}[min(int(get_build_version()), 10)]
+            ftproj = os.path.join(src_path, 'builds', 'windows', 'vc2010', 'freetype')
+
+            vc_config = 'Debug' if cmd.debug else 'Release'
+
+            tar_extract(tarball_path, "build")
+
+            if not cmd.compiler.initialized:
+                cmd.compiler.initialize()
+
+            def spawn(command):
+                command = list(command)
+                if hasattr(cmd.compiler, 'find_exe'):
+                    executable = cmd.compiler.find_exe(command[0])
+                    if not executable:
+                        raise ValueError("Couldn't find %s" % command[0])
+                    return cmd.compiler.spawn([executable] + command[1:])
+                else:
+                    return cmd.compiler.spawn(command)
+
+            if get_build_version() < 11.0:
+                vc_platform = 'x64' if X64 else 'Win32'
+                vc_config = 'LIB ' + vc_config
+                # monkey-patch project files, because
+                # vc2005 and vc2008 have only Win32 targets
+                # TODO: fix `win32` output dir to `x64`?
+                fixproj(ftproj + '.sln', vc_platform)
+                fixproj(ftproj + '.vcproj', vc_platform)
+                spawn(['vcbuild', ftproj + '.sln', '/M', '/time',
+                       '/platform:{}'.format(vc_platform),
+                       '{config}|{platform}'.format(config=vc_config,
+                           platform=vc_platform)
+                      ])
+                postfix = '_D' if cmd.debug else ''
+                builddir = os.path.join(src_path, 'objs', 'win32', vc)
+            else:
+                vc_platform = 'x64' if X64 else 'x86'
+                spawn(['msbuild', ftproj + '.sln', '/m', '/t:Clean;Build',
+                       '/toolsversion:{}'.format(get_build_version()),
+                       ('/p:Configuration={config}'
+                        ';Platform={platform}'
+                        ';VisualStudioVersion={version}'
+                        ';ToolsVersion={version}'
+                        ';PlatformToolset=v{toolset:d}'
+                       ).format(config=vc_config, platform=vc_platform,
+                                version=get_build_version(),
+                                toolset=int(get_build_version() * 10)),
+                      ])
+                postfix = 'd' if cmd.debug else ''
+                builddir = os.path.join(src_path, 'objs', vc, vc_platform)
+
+            verstr = LOCAL_FREETYPE_VERSION.replace('.', '')
+            buildname = 'freetype{0}{1}.lib'.format(verstr, postfix)
+            buildpath = os.path.join(builddir, buildname)
+            assert os.path.isfile(buildpath)
+            os.renames(buildpath, self.get_local_freetype_lib_path())
 
 
 class FT2Font(SetupPackage):
@@ -590,6 +630,23 @@ class FT2Font(SetupPackage):
         add_numpy_flags(ext)
         LibAgg().add_flags(ext, add_sources=False)
         return ext
+
+    def do_custom_build(self, cmd):
+        if cmd.compiler.compiler_type != 'msvc':
+            return
+
+        if not cmd.compiler.initialized:
+            cmd.compiler.initialize()
+
+        # TODO: What about compiler pathes?
+        if not has_include_file(cmd.compiler.include_dirs, 'stdint.h'):
+            if os.getenv('CONDA_DEFAULT_ENV'):
+                # TODO: spawn conda install msinttypes?
+                pass
+            else:
+                # TODO: download from https://code.google.com/p/msinttypes/
+                #cmd.compiler.add_include_dir(...)
+                pass
 
 
 class Qhull(SetupPackage):
