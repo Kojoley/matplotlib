@@ -23,12 +23,12 @@ environment:
     # In theory we could use a single CONDA_INSTALL_LOCN because we construct
     # the envs anyway. But using one for the right python version hopefully
     # making things faster due to package caching.
-    - PYTHON_VERSION: "3.6"
-      CONDA_INSTALL_LOCN: "C:\\Miniconda36-x64"
-      TEST_ALL: "no"
+    #- PYTHON_VERSION: "3.6"
+    #  CONDA_INSTALL_LOCN: "C:\\Miniconda36-x64"
+    #  TEST_ALL: "no"
     - PYTHON_VERSION: "3.7"
       CONDA_INSTALL_LOCN: "C:\\Miniconda37-x64"
-      TEST_ALL: "no"
+      TEST_ALL: "yes"
 
 # We always use a 64-bit machine, but can build x86 distributions
 # with the PYTHON_ARCH variable
@@ -60,7 +60,7 @@ install:
   # if conda-forge gets a new pyqt, it might be nice to install it as well to have more backends
   # https://github.com/conda-forge/conda-forge.github.io/issues/157#issuecomment-223536381
   - conda create -q -n test-environment python=%PYTHON_VERSION%
-    freetype=2.6 tk=8.5
+    freetype=2.6 tk=8.6.9
     pip setuptools numpy sphinx tornado
   - activate test-environment
   - echo %PYTHON_VERSION% %TARGET_ARCH%
