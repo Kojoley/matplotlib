@@ -46,7 +46,7 @@ addons:
       - texlive-latex-recommended
       - texlive-luatex
       - texlive-xetex
-      - ttf-wqy-zenhei
+      - fonts-noto-cjk
 
 env:
   global:
@@ -109,7 +109,7 @@ before_install: |
     brew uninstall numpy gdal postgis
     brew unlink python@2
     brew upgrade python
-    brew install ffmpeg imagemagick mplayer ccache
+    brew install ffmpeg imagemagick mplayer ccache homebrew/cask-fonts/font-noto-sans-cjk
     hash -r
     which python
     python --version

@@ -112,15 +112,15 @@ def test_utf16m_sfnt():
     assert segoe_ui_semibold.weight == "semibold"
 
 
-@pytest.mark.xfail(not (os.environ.get("TRAVIS") and sys.platform == "linux"),
+@pytest.mark.xfail(not os.environ.get("TRAVIS"),
                    reason="Font may be missing.")
 def test_find_ttc():
-    fp = FontProperties(family=["WenQuanYi Zen Hei"])
-    if Path(findfont(fp)).name != "wqy-zenhei.ttc":
+    fp = FontProperties(family=["Noto Sans CJK"])
+    if Path(findfont(fp)).name != "NotoSansCJK.ttc":
         # Travis appears to fail to pick up the ttc file sometimes.  Try to
         # rebuild the cache and try again.
         fm._rebuild()
-        assert Path(findfont(fp)).name == "wqy-zenhei.ttc"
+        assert Path(findfont(fp)).name == "NotoSansCJK.ttc"
 
     fig, ax = plt.subplots()
     ax.text(.5, .5, "\N{KANGXI RADICAL DRAGON}", fontproperties=fp)
