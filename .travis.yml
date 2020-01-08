@@ -162,14 +162,12 @@ install:
   - |
     if [[ $TRAVIS_OS_NAME != 'osx' ]] && [[ $RUN_PYTEST == 1 ]]; then
       export "CPPFLAGS=--coverage -fsanitize=address,undefined"
-      export LDFLAGS=-shared-libasan
     fi
   - |
     python -mpip install -ve .  # Install Matplotlib.
   - |
     if [[ $TRAVIS_OS_NAME != 'osx' ]] && [[ $RUN_PYTEST == 1 ]]; then
       unset CPPFLAGS
-      unset LDFLAGS
     fi
 
 before_script: |
