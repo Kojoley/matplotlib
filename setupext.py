@@ -545,6 +545,9 @@ class FreeType(SetupPackage):
                 log = pathlib.Path(src_path, 'config.log')
                 if log.is_file():
                     print(log.read_text())
+                subprocess.run(
+                    ["cat", "config.log"],
+                    env=env, cwd=src_path, shell=True)
                 raise
             subprocess.check_call(["make"], env=env, cwd=src_path)
         else:
