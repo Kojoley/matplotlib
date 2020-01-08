@@ -161,7 +161,7 @@ install:
   # Set flag in a delayed manner to avoid issues with installing other packages
   - |
     if [[ $TRAVIS_OS_NAME != 'osx' ]] && [[ $RUN_PYTEST == 1 ]]; then
-      export CPPFLAGS=--coverage
+      export "CPPFLAGS=--coverage -fsanitize=address,undefined -shared-libasan"
     fi
   - |
     python -mpip install -ve .  # Install Matplotlib.
@@ -183,6 +183,7 @@ script:
       # The number of processes is hardcoded (-n2), because using too many
       # causes the Travis VM to run out of memory (since so many copies of
       # inkscape and ghostscript are running at the same time).
+      LD_PRELOAD=$(gcc -print-file-name=libasan.so) \
       python -mpytest -raR --maxfail=50 --timeout=300 --durations=25 --cov-report= --cov=lib -n2 --log-level=DEBUG
     fi
   - |
