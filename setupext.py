@@ -536,10 +536,16 @@ class FreeType(SetupPackage):
         if sys.platform != 'win32':  # compilation on non-windows
             env = {**os.environ,
                    "CFLAGS": "{} -fPIC".format(os.environ.get("CFLAGS", ""))}
-            subprocess.check_call(
-                ["./configure", "--with-zlib=no", "--with-bzip2=no",
-                 "--with-png=no", "--with-harfbuzz=no"],
-                env=env, cwd=src_path)
+            try:
+                subprocess.check_call(
+                    ["./configure", "--with-zlib=no", "--with-bzip2=no",
+                     "--with-png=no", "--with-harfbuzz=no"],
+                    env=env, cwd=src_path)
+            except subprocess.CalledProcessError:
+                log = pathlib.Path(src_path, 'config.log')
+                if log.is_file():
+                    print(log.read_text())
+                raise
             subprocess.check_call(["make"], env=env, cwd=src_path)
         else:
             # compilation on windows
