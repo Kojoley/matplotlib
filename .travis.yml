@@ -161,7 +161,7 @@ install:
   # Set flag in a delayed manner to avoid issues with installing other packages
   - |
     if [[ $TRAVIS_OS_NAME != 'osx' ]] && [[ $RUN_PYTEST == 1 ]]; then
-      export "CPPFLAGS=--coverage -fsanitize=address,undefined"
+      export "CPPFLAGS=--coverage -fsanitize=address,undefined -g -fno-omit-frame-pointer -fno-optimize-sibling-calls"
     fi
   - |
     python -mpip install -ve .  # Install Matplotlib.
