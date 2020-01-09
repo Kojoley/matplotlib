@@ -144,7 +144,7 @@ _freetype_hashes = {
 # version.  It must match the value in
 # lib/matplotlib.__init__.py and also needs to be changed below in the
 # embedded windows build script (grep for "REMINDER" in this file)
-LOCAL_FREETYPE_VERSION = '2.6.1'
+LOCAL_FREETYPE_VERSION = '2.6.2'
 LOCAL_FREETYPE_HASH = _freetype_hashes.get(LOCAL_FREETYPE_VERSION, 'unknown')
 
 
@@ -547,7 +547,7 @@ class FreeType(SetupPackage):
                           ignore_errors=True)
             msbuild_platform = (
                 'x64' if platform.architecture()[0] == '64bit' else 'Win32')
-            base_path = pathlib.Path("build/freetype-2.6.1/builds/windows")
+            base_path = pathlib.Path("build/freetype-2.6.2/builds/windows")
             vc = 'vc2010'
             sln_path = (
                 base_path / vc / "freetype.sln"
