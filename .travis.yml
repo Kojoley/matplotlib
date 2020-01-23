@@ -103,7 +103,9 @@ matrix:
   allow_failures:
     - python: "nightly"
 
-before_install: |
+before_install:
+- ls -laR "$HOME/.cache/pip"
+- |
   case "$TRAVIS_OS_NAME" in
   linux)
     export PATH=/usr/lib/ccache:$PATH
