@@ -127,6 +127,7 @@ before_install: |
   esac
 
 install:
+  - ls -laR "$HOME/.cache/pip"
   - |
     # Setup environment.
     ccache -s
