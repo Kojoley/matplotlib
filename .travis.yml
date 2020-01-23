@@ -36,7 +36,7 @@ addons:
       - libgeos-dev
       - libgirepository1.0-dev
       - lmodern
-      - otf-freefont
+      - fonts-freefont-otf
       - pgf
       - pkg-config
       - qtbase5-dev
@@ -80,6 +80,8 @@ matrix:
         - EXTRAREQS='-r requirements/testing/travis36.txt'
     - python: 3.7
     - python: 3.8
+    - python: 3.8
+      dist: bionic
     - python: "nightly"
       env:
         - PRE=--pre
