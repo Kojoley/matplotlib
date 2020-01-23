@@ -78,8 +78,13 @@ matrix:
         - PINNEDVERS='-c requirements/testing/travis36minver.txt'
         - DELETE_FONT_CACHE=1
         - EXTRAREQS='-r requirements/testing/travis36.txt'
-    - python: 3.7
     - python: 3.8
+      arch: arm64
+      dist: bionic # gcc crashes on xenial during numpy installation
+    - python: 3.8
+      arch: ppc64le
+    - python: 3.8
+      arch: s390x
     - python: "nightly"
       env:
         - PRE=--pre
