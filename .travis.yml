@@ -129,6 +129,7 @@ before_install:
   esac
 
 install:
+  - sudo chown -R "$USER:$USER" "$HOME/.cache/pip"
   - ls -laR "$HOME/.cache/pip"
   - |
     # Setup environment.
