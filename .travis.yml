@@ -104,7 +104,7 @@ matrix:
     - python: "nightly"
 
 before_install:
-- ls -laR "$HOME/.cache/pip"
+- ls -laR "$HOME/.cache"
 - |
   case "$TRAVIS_OS_NAME" in
   linux)
@@ -130,7 +130,7 @@ before_install:
 
 install:
   - sudo chown -R "$USER:$USER" "$HOME/.cache/pip"
-  - ls -laR "$HOME/.cache/pip"
+  - ls -laR "$HOME/.cache"
   - |
     # Setup environment.
     ccache -s
