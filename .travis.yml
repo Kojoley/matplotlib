@@ -103,9 +103,7 @@ matrix:
   allow_failures:
     - python: "nightly"
 
-before_install:
-- ls -laR "$HOME/.cache"
-- |
+before_install: |
   case "$TRAVIS_OS_NAME" in
   linux)
     export PATH=/usr/lib/ccache:$PATH
@@ -130,7 +128,6 @@ before_install:
 
 install:
   - sudo chown -R "$USER:`id -gn`" "$HOME/.cache"
-  - ls -laR "$HOME/.cache"
   - |
     # Setup environment.
     ccache -s
