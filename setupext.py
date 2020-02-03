@@ -9,6 +9,7 @@ import logging
 import os
 import pathlib
 import platform
+import re
 import shlex
 import shutil
 import subprocess
@@ -562,11 +563,15 @@ class FreeType(SetupPackage):
 </Project>
 """)
             cc = ccompiler.new_compiler()
-            cc.initialize()  # Get devenv & msbuild in the %PATH% of cc.spawn.
-            cc.spawn(["devenv", str(sln_path), "/upgrade"])
-            cc.spawn(["msbuild", str(sln_path),
+            cc.initialize()  # Get msbuild in the %PATH% of cc.spawn.
+            nmake_path = pathlib.Path(cc.cc).with_name('nmake.exe')
+            nmake_help = subprocess.check_output([str(nmake_path), '/?'],
+                                                 stderr=subprocess.STDOUT)
+            nmake_ver = float(re.search(rb'\d+\.\d+', nmake_help).group(0))
+            cc.spawn(['msbuild', str(sln_path),
                       "/t:Clean;Build",
-                      f"/p:Configuration=Release;Platform={msbuild_platform}"])
+                      (f"/p:Configuration=Release;Platform={msbuild_platform}"
+                       f";PlatformToolset=v{int(nmake_ver * 10)}")])
             # Move to the corresponding Unix build path.
             (src_path / "objs" / ".libs").mkdir()
             # Be robust against change of FreeType version.
