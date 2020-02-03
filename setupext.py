@@ -551,10 +551,6 @@ class FreeType(SetupPackage):
                 'Support for other compilers is not implemented')
 
             from distutils.msvccompiler import get_build_version
-            from setup_external_compile import fixproj, X64, tar_extract
-
-            if not cmd.compiler.initialized:
-                cmd.compiler.initialize()
 
             # TODO: map msvc version to available freetype msvc solution
             vc = {9: 'vc2008', 10: 'vc2010'}[min(int(get_build_version()), 10)]
@@ -563,9 +559,6 @@ class FreeType(SetupPackage):
             vc_config = 'Debug' if cmd.debug else 'Release'
 
             tar_extract(tarball_path, "build")
-
-            if not cmd.compiler.initialized:
-                cmd.compiler.initialize()
 
             def spawn(command):
                 command = list(command)
@@ -577,36 +570,20 @@ class FreeType(SetupPackage):
                 else:
                     return cmd.compiler.spawn(command)
 
-            if get_build_version() < 11.0:
-                vc_platform = 'x64' if X64 else 'Win32'
-                vc_config = 'LIB ' + vc_config
-                # monkey-patch project files, because
-                # vc2005 and vc2008 have only Win32 targets
-                # TODO: fix `win32` output dir to `x64`?
-                fixproj(ftproj + '.sln', vc_platform)
-                fixproj(ftproj + '.vcproj', vc_platform)
-                spawn(['vcbuild', ftproj + '.sln', '/M', '/time',
-                       '/platform:{}'.format(vc_platform),
-                       '{config}|{platform}'.format(config=vc_config,
-                           platform=vc_platform)
-                      ])
-                postfix = '_D' if cmd.debug else ''
-                builddir = os.path.join(src_path, 'objs', 'win32', vc)
-            else:
-                vc_platform = 'x64' if X64 else 'x86'
-                spawn(['msbuild', ftproj + '.sln', '/m', '/t:Clean;Build',
-                       '/toolsversion:{}'.format(get_build_version()),
-                       ('/p:Configuration={config}'
-                        ';Platform={platform}'
-                        ';VisualStudioVersion={version}'
-                        ';ToolsVersion={version}'
-                        ';PlatformToolset=v{toolset:d}'
-                       ).format(config=vc_config, platform=vc_platform,
-                                version=get_build_version(),
-                                toolset=int(get_build_version() * 10)),
-                      ])
-                postfix = 'd' if cmd.debug else ''
-                builddir = os.path.join(src_path, 'objs', vc, vc_platform)
+            vc_platform = 'x64' if X64 else 'x86'
+            spawn(['msbuild', ftproj + '.sln', '/m', '/t:Clean;Build',
+                   '/toolsversion:{}'.format(get_build_version()),
+                   ('/p:Configuration={config}'
+                    ';Platform={platform}'
+                    ';VisualStudioVersion={version}'
+                    ';ToolsVersion={version}'
+                    ';PlatformToolset=v{toolset:d}'
+                   ).format(config=vc_config, platform=vc_platform,
+                            version=get_build_version(),
+                            toolset=int(get_build_version() * 10)),
+                  ])
+            postfix = 'd' if cmd.debug else ''
+            builddir = os.path.join(src_path, 'objs', vc, vc_platform)
 
             verstr = LOCAL_FREETYPE_VERSION.replace('.', '')
             buildname = 'freetype{0}{1}.lib'.format(verstr, postfix)
@@ -630,23 +607,6 @@ class FT2Font(SetupPackage):
         add_numpy_flags(ext)
         LibAgg().add_flags(ext, add_sources=False)
         return ext
-
-    def do_custom_build(self, cmd):
-        if cmd.compiler.compiler_type != 'msvc':
-            return
-
-        if not cmd.compiler.initialized:
-            cmd.compiler.initialize()
-
-        # TODO: What about compiler pathes?
-        if not has_include_file(cmd.compiler.include_dirs, 'stdint.h'):
-            if os.getenv('CONDA_DEFAULT_ENV'):
-                # TODO: spawn conda install msinttypes?
-                pass
-            else:
-                # TODO: download from https://code.google.com/p/msinttypes/
-                #cmd.compiler.add_include_dir(...)
-                pass
 
 
 class Qhull(SetupPackage):
