@@ -49,12 +49,6 @@ steps:
   displayName: 'Use Python $(python.version)'
   condition: and(succeeded(), ne(variables['python.version'], 'Pre'))
 
-- task: stevedower.python.InstallPython.InstallPython@1
-  displayName: 'Use prerelease Python'
-  inputs:
-    prerelease: true
-  condition: and(succeeded(), eq(variables['python.version'], 'Pre'))
-
 - bash: |
     case "$(python -c 'import sys; print(sys.platform)')" in
     linux)
