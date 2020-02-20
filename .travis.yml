@@ -204,4 +204,5 @@ after_failure: |
   fi
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash) -v -a '-rl' -e TRAVIS_PYTHON_VERSION -y ci/codecov.yml|| echo "Codecov did not collect coverage reports"
+  - find src -type f -name '*.gcno' | xargs gcov -rlpb
+  - bash <(curl -s https://codecov.io/bash) -v -X gcov -e TRAVIS_PYTHON_VERSION -y ci/codecov.yml|| echo "Codecov did not collect coverage reports"
