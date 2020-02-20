@@ -204,4 +204,4 @@ after_failure: |
   fi
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash) -v -G ./src -e TRAVIS_PYTHON_VERSION -y ci/codecov.yml|| echo "Codecov did not collect coverage reports"
+  - bash <(curl -s https://codecov.io/bash) -v -a '-rl' -G './src/**' -e TRAVIS_PYTHON_VERSION -y ci/codecov.yml|| echo "Codecov did not collect coverage reports"
